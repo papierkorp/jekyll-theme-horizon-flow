@@ -1,0 +1,67 @@
+---
+layout: default
+---
+
+<main id="tags">
+  <section>
+    <h1>Tags</h1>
+
+    <!-- Capture and sort tags by count -->
+    {% capture site_tags %}
+      {% for tag in site.tags %}
+        {{ tag[1].size | plus: 1000 }}&#x1F;{{ tag | first }}
+        {% unless forloop.last %}&#x1E;{% endunless %}
+      {% endfor %}
+    {% endcapture %}
+    {% assign sortedTags = site_tags | split: '&#x1E;' | sort | reverse %}
+
+    <!-- Show all tags sorted by count -->
+    <div class="tags_all">
+      <ul>
+        {% for tag in sortedTags %}
+          {% assign tagParts = tag | split: '&#x1F;' %}
+          {% assign tagName = tagParts[1] %}
+          {% assign tagCount = tagParts[0] | minus: 1000 %}
+          <li>
+            <a href="#{{ tagName }}">
+              <span class="tag_linktitle">{{ tagName }}</span>
+              <span class="tag_count">{{ tagCount }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Show posts for selected tag -->
+    <div class="tags_results">
+      Found Posts per selected Tag
+      <br /><br /><br /><br />
+
+      {% for tag in site.tags %}
+        <div id="{{ tag[0] }}" class="tag_posts">
+          <h2>{{ tag[0] }}</h2>
+
+          {% for post in tag[1] %}
+            <div class="tags_findresult">
+              <span class="tags_date">
+                <a href="{{ post.url }}">
+                  <i class="tags_day">{{ post.date | date: "%d" }}</i>
+                </a>
+                <a href="{{ post.url }}">
+                  <span>{{ post.date | date: "%b/%Y" }}</span>
+                </a>
+              </span>
+
+              <span class="tags_summary">
+                <h3>
+                  <a href="{{ post.url }}">{{ post.title }}</a>
+                </h3>
+                {{ post.content | markdownify | strip_html | truncatewords: 50 }}
+              </span>
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+</main>

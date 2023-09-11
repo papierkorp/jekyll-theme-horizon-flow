@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+<main id="post">
+	<article>
+		{% if page.display_toc %}
+		<div class="toc">
+			<input type="checkbox" id="tocMenuButton">
+			<label for="tocMenuButton" id="tocMenuButtonLabel">
+			  <i class="fa fa-bars"></i>
+			</label>
+			<div id="tocContainer">
+				<h1>TOC</h1>
+		 		{% toc %}
+			</div>
+		</div>
+		{% endif %}
+		{% if page.no_header != true %}
+		<div class="post_header">
+			<h1>{{page.title}}</h1>
+			<h3>{{page.subtitle}}</h3>
+			{% if page.categories != nil and page.categories.size > 0 %}
+			{% endif %}
+			<p class="supplements">
+				<span class="supplements-category">
+					Category:
+					{% for category in page.categories limit: 5 %}
+						<a href="/categories#{{ category | slugify }}">{{ category }}</a>{% if forloop.last == false %},{% endif %}
+					{% endfor %}
+				</span>
+				<span>
+					<i class="fa fa-calendar"></i> {{ page.date | date: "%B %d, %Y" }}
+				</span>
+				<span class="supplements-sep"></span>
+				<span class="reading-time" title="Estimated read time">
+					{% include read_time.html %}
+				</span>
+				{% if page.tags != nil and page.tags.size > 0 %}
+					<span class="supplements-sep"></span>
+					<span>
+						<i class="fa fa-tags"></i>
+						{% for tag in page.tags limit: 5 %}
+							<a href="/tags#{{ tag | slugify }}">{{ tag }}</a>{% if forloop.last == false %},{% endif %}
+						{% endfor %}
+					</span>
+				{% endif %}
+				{%- if page.last_modified_at -%}
+					<span class="supplements-sep"></span>
+				    <span class="last_modified_at">last update: {{ page.last_modified_at }}</span>
+				{% endif %}
+			</p>
+		</div>
+		{% endif %}
+		<div class ="post_content">
+			{{content}}
+			{% if page.toTop != false %}
+			<a href="#" id="toTopButton">
+			  <i class="fa fa-arrow-circle-o-up"></i>
+			</a>
+			{% endif %}
+		</div>
+		
+
+	</article>
+</main>

@@ -1,0 +1,15 @@
+<!-- https://carlosbecker.com/posts/jekyll-reading-time-without-plugins/ -->
+
+{% if post.content.size > 0 %}
+{% assign words = post.content | number_of_words %}
+{% endif %}
+{% if content.size > 0 %}
+{% assign words = content | number_of_words %}
+{% endif %}
+{% if words < 180 %}
+  <i class="fa fa-clock-o"></i>  1 min read
+{% elsif words < 360 %}
+  <i class="fa fa-clock-o"></i>  2 min read
+{% else %}
+  <i class="fa fa-clock-o"></i>  {{ words | divided_by:180 }} min read
+{% endif %}

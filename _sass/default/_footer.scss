@@ -1,0 +1,155 @@
+footer {
+  width: 100%;
+  color: $lightgrey;
+  font-size: 0.8em;
+  margin-top: auto;
+}
+
+footer aside {
+  background-color: $lightblue;
+  display: flex;
+  padding: 1em;
+  max-height: max-content;
+}
+
+
+// footer aside section {
+//   padding: 0 0 0 1em;
+//   flex-grow: 1;
+//   max-width: 25%;
+// }
+
+/* one item */
+footer aside section:first-child:nth-last-child(1) {
+  padding: 0 0 0 1em;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+/* two items */
+footer aside section:first-child:nth-last-child(2),
+footer aside section:first-child:nth-last-child(2) ~ section {
+  padding: 0 0 0 1em;
+  flex-grow: 1;
+  max-width: 50%;
+}
+
+/* three items */
+footer aside section:first-child:nth-last-child(3),
+footer aside section:first-child:nth-last-child(3) ~ section {
+  padding: 0 0 0 1em;
+  flex-grow: 1;
+  max-width: 33%;
+}
+
+/* four items */
+footer aside section:first-child:nth-last-child(4),
+footer aside section:first-child:nth-last-child(4) ~ section {
+  padding: 0 0 0 1em;
+  flex-grow: 1;
+  max-width: 25%;
+}
+
+footer aside section:first-child {
+  padding: 0;
+}
+
+footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li {
+  padding-bottom: 0.2em;
+}
+
+footer a {
+  @include links($lightgrey);
+  padding: 0;
+}
+
+footer a:hover {
+  @include hover();
+}
+
+footer h1, footer h2, footer h3 {
+  color: $darkblue;
+  font-size: 1em;
+}
+
+footer .social-icons {
+  background-color: $darkblue;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+footer .social-icons > * {
+  color: $lightgrey;
+  margin: 0 0.5em; 
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+
+
+footer .social-icons .divider::before {
+  content: "|";
+  font-size: 0.8em;
+}
+
+.footer_categories, .footer_tags {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    columns: 3;
+  }
+
+  a {
+    text-decoration: none;
+    color: $lightgrey;
+    letter-spacing: -1px;
+    width: 100%;
+    cursor: pointer;
+  }
+}
+
+
+.footer_tags {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    columns: 4;
+  }
+
+  a {
+    text-decoration: none;
+    color: $lightgrey;
+    letter-spacing: -1px;
+    width: 100%;
+    cursor: pointer;
+  }
+}
+
+.footer_recentposts {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    columns: 2;
+  }
+
+  a {
+    text-decoration: none;
+    color: $lightgrey;
+    letter-spacing: -1px;
+    width: 100%;
+    cursor: pointer;
+  }
+}

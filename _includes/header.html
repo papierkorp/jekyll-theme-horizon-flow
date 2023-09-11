@@ -1,0 +1,27 @@
+{% assign current = page.url | downcase | split: '/' %}
+
+
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+<link rel="shortcut icon" href="#">
+
+<header>
+
+	<hr id="header_hr" />
+
+	<nav>
+		<ul>
+			{% for item in site.navigation %}
+			  {% assign class = nil %}
+			  {% if page.url contains item.url %} <!--or (page.url == '/' and item.url == '/index.html')-->
+			      {% assign class = 'navi_current' %}
+			  {% endif %}
+			  <li><a href="{{ item.url }}" class="{{ class }}">
+			      {{ item.title }}
+			  </a></li>
+			{% endfor %}
+		</ul>
+	</nav>
+</header>
+
+
+

@@ -1,0 +1,72 @@
+---
+layout: default
+---
+
+<main id="archive">
+  <section>
+    <h1>Archive</h1>
+
+    <!-- show all years -->
+    <div class="archive_all_years">
+      <ul >
+        {% assign postsByYear = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}
+        {% for year in postsByYear %}
+          <li>
+            <a href="#{{ year.name }}">
+              <span class="archive_linktitle">{{ year.name }}</span>
+              <span class="archive_yearcount">{{ year.items | size }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+
+
+    <!-- show posts for certain year -->
+    <div class="archive_results">
+    Found Posts per selected Year
+    <br/><br/><br/><br/>
+
+    {% assign postsByYear = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}
+    {% for year in postsByYear %}
+      <div id="{{ year.name }}" class="archive_year" >
+        <h2>{{ year.name }}</h2>
+
+        {% for post in year.items %}
+          {% if post.id %}
+            {% assign title = post.title | markdownify | strip_html %}
+          {% else %}
+            {% assign title = post.title %}
+          {% endif %}
+
+            <div class="archive_findresults">
+
+              <span class="archive_date">
+
+                <a href="{{ post.url }}">
+                  <i class="archive_day">{{ post.date | date: "%d" }}</i>
+                </a>
+                <a href="{{ post.url }}">
+                  <span>{{ post.date | date: "%b/%Y" }}</span>
+                </a>
+
+              </span>
+
+              <span class="archive_summary">
+                <h3>
+                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h3>
+                {{ post.content | markdownify | strip_html | truncatewords: 50 }}
+              </span>
+
+            </div>
+
+        {% endfor %}
+
+      </div>
+    {% endfor %}
+    </div>
+
+  </section>
+</main>

@@ -1,0 +1,182 @@
+@mixin links($color) {
+	text-align: center;
+	text-decoration: none;
+	padding: 0 0.2em;
+	color: $color;
+
+	&:visited {color: $color;}
+	&:hover {color: $color; font-weight: bold;}
+	&:active {color: $color;}
+}
+
+
+
+@mixin default_card($font-color) {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    border-radius: 2px;
+    box-shadow: 0 0 6px $mid;
+    background-color: $lighter;
+    color: $font-color;
+}
+
+
+
+@mixin default_header($padding-left) {
+    font-size: 1.12em;
+    letter-spacing: 5px;
+    border-bottom: 1px dotted $mid;
+    margin-top: 2em;
+    padding-bottom: 0.5em;
+    padding-left: $padding-left
+}
+
+
+@mixin page_title() {
+    text-shadow: 0px 2px 4px rgba(100,100,100,0.5);
+    color: #060606;
+    font-family: Inter;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 0;
+}
+
+
+@mixin hover() {
+    background-color: $darkblue;
+    color: $orange;
+}
+
+@mixin findresults() {
+    display: flex;
+    margin-bottom: 2em;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    h3 {
+        color: $darkblue;
+        padding: 0;
+        margin: 0;
+    }
+
+    h3 a {
+        color: $darkblue;
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
+
+@mixin findresults_day() {
+    display: inline-block;
+    background: $darkblue;
+    color: $lightgrey;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    text-align: center;
+    font-style: unset;
+    line-height: 2em;
+}
+
+@mixin findresults_date() {
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: -5px;
+    margin: auto;
+}
+
+@mixin findresults_summary() {
+    margin-left: 2em;
+    color: $lightblue;
+
+    a:hover {
+        @include hover();
+    }
+}
+
+@mixin showlinks($rows: 4) {
+    &::after {
+        content: "";
+        display: block;
+        border-top: 1px solid $lightblue;
+        margin-left: -100vw;
+        margin-right: -100vw;
+        margin-bottom: 4em;
+        margin-top: 4em;
+        width: 200vw; //only working with overflow-x: hidden; in body in _base.scss
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 1rem;
+
+        // Each item takes half of the container width minus the gap
+        @if $rows == 2 {
+            column-gap: 5rem;
+            li {
+                width: calc(50% - 5rem);
+            }
+        } @else if $rows == 3 {
+            column-gap: 3rem;
+            li {
+                width: calc(33.33% - 3rem);
+            }
+        } @else if $rows == 4 {
+            column-gap: 2.5rem;
+            li {
+                width: calc(25% - 2.5rem);
+            }
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px dotted $lightblue;
+            cursor: pointer;
+
+            a {
+                text-decoration: none;
+                color: $darkblue;
+                font-weight: bold;
+                text-transform: lowercase;
+                letter-spacing: -1px;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                padding: 0.5em;
+
+                &:hover {
+                    @include hover();
+                }
+            }
+
+            .archive_linktitle {
+                flex: 1;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        ul {
+            column-gap: 0;
+
+            li {
+                width: 100%;
+            }
+        }
+    }
+}

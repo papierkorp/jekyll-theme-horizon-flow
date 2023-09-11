@@ -1,0 +1,110 @@
+#home {
+	width: 100%;
+}
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* main - cards layout (each post) */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+// Supplements = Date + Tags
+
+.single_article {
+	&::after {
+		content: "";
+		display: block;
+		border-top: 1px dashed $lightblue;
+		margin-left: -100vw;
+		margin-right: -100vw;
+		margin-bottom: 4em; //same as .single_article .summary
+		width: 200vw; //only working with overflow-x: hidden; in body in _base.scss
+	}
+
+
+	h3 {
+		//font-family: Inter;
+		font-size: 36px;
+		font-weight: 700;
+		letter-spacing: 2px;
+		margin: 0;
+	}
+
+	a {
+		color: #022539;
+		text-decoration: none;
+
+		&:hover {
+			@include hover();
+		}
+
+		&:hover h3 {
+			@include hover();
+		}
+	}
+
+	.summary {
+		margin-top: 2em;
+		margin-bottom: 4em;
+	}
+
+}
+
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* Pagination (next + previous Buttons on the bottom)
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+.pagination {
+	display: flex;
+	justify-content: space-between;
+
+
+	.page_count {
+		margin: 0 auto;
+	}
+
+	.spannext {
+		padding-right: 15px;
+		padding-left: 12px;
+		border: 1px solid black;
+		padding-top: 0;
+		padding-bottom: 5px;
+		height: 1em;
+		position: relative;
+	}
+
+	.spanprevious {
+		padding-right: 12px;
+		padding-left: 15px;
+		border: 1px solid black;
+		padding-top: 0;
+		padding-bottom: 5px;
+		height: 1em;
+	}
+
+	.next {
+		float: right;
+	}
+
+	.previous {
+		float: left;
+	}
+
+	.arrow {
+	  border: solid $darkblue;
+	  border-width: 0 3px 3px 0;
+	  display: inline-block;
+	  padding: 3px;
+	}
+
+	.right {
+	  transform: rotate(-45deg);
+	  -webkit-transform: rotate(-45deg);
+	}
+
+	.left {
+	  transform: rotate(135deg);
+	  -webkit-transform: rotate(135deg);
+	}
+}

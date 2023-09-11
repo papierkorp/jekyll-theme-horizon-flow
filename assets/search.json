@@ -1,0 +1,20 @@
+---
+---
+
+[
+  {% for post in site.posts %}
+    {
+
+      "title"    : "{{ post.title | escape }}",
+      "summary"  : "{{ post.content | markdownify | strip_html | truncatewords: 50 }}",
+      "url"      : "{{ site.baseurl }}{{ post.url }}",
+      "category" : "{{ post.categories | join: ', ' }}",
+      "tags"     : "{{ post.tags | join: ', ' }}",
+      "keywords" : "{{ post.search_keywords }}",
+      "date"     : "{{ post.date }}",
+      "date_day" : "{{ post.date | date: "%d" }}",
+      "date_my"  : "{{ post.date | date: "%b/%Y" }}"
+
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

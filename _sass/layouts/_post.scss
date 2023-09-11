@@ -1,0 +1,324 @@
+#post {
+	width: 100%;
+	font-size: 1.2em;
+}
+
+
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* content layout */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+
+.post_content {
+	position: relative;
+	margin-bottom: 4em; // for the to the top button
+
+	// header
+
+	h1 {
+		font-size: 1.5em;
+		font-style: italic;
+		letter-spacing: 5px;
+		border-left: 5px solid $darkblue;
+		padding: 0.5em;
+		margin-top: 3em;
+		background-color: $lightgrey;
+		margin-left: calc(-1em + 5px);; // 14px*2 padding - 5px border
+	}
+
+
+	h2 {
+		@include default_header(0);
+		border-bottom: 1px solid $darkblue;
+		font-size: 1.25em;
+		margin-top: 2.5em;
+	}
+
+
+	h3 {
+		@include default_header(0);
+	}
+
+	h4 {
+		@include default_header(2em);
+	}
+	
+	h5 {
+		@include default_header(4em);
+	}
+
+	h6 {
+		@include default_header(6em);
+	}
+
+	// to top Button...
+	#toTopButton {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		padding: 16px;
+
+		i {
+			color: $orange;
+			font-size: 1.8em;
+		}
+	}
+
+	// blockquotes
+
+	blockquote {
+		background: $lightgrey;
+		border-left: 10px solid #ccc;
+		margin: 1.5em 1em;
+		padding: 0.5em 10px;
+		quotes: "\201C""\201D""\2018""\2019";
+		font-style: italic;
+	}
+
+	blockquote::before {
+		color: #ccc;
+		content: open-quote;
+		font-size: 4em;
+		line-height: 0.1em;
+		margin-right: 0.25em;
+		vertical-align: -0.4em;
+	}
+
+	blockquote p {
+		display: inline;
+	}
+
+	// Tables
+	table {
+	  border-collapse: collapse;
+	  width: 100%;
+	  margin-bottom: 2em;
+	}
+
+	td, th {
+	  border: 1px solid $darkblue;
+	  padding: 8px;
+	}
+
+	tr:nth-child(even){background-color: rgba(0, 0, 0, 10%);}
+
+	tr:hover {background-color: $orange;}
+
+	th {
+	  padding-top: 12px;
+	  padding-bottom: 12px;
+	  background-color: $darkblue;
+	  color: white;
+	  text-align: center;
+	}
+
+
+	// code blocks default styles (includes "external/_highlighter_rougify_base16dark.scss")
+
+	.highlight {
+		pre {
+			padding: 1em;
+			color: $lightgrey;
+			overflow: auto;
+		}
+
+		pre * {
+			font-family: monospace;
+			font-size: 1em;
+		}
+
+		table {
+			margin: 0;
+		}
+		tr:hover {
+			background-color: #151515; //depends on external/_highlighter_rougify_base16dark.scss
+		}
+
+		td, th {
+			  border: 0;
+			  padding: 0;
+			}
+	}
+
+	// Inline Code Block
+	code.highlighter-rouge {
+		font-style: italic;
+		color: $darkblue;
+		background-color: $lightgrey;
+		padding: 0 5px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* TOC */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+
+
+article {
+	position: relative;
+}
+
+#tocContainer {
+	display: none;
+}
+
+
+/* Style your toggle button */
+#tocMenuButtonLabel {
+	cursor: pointer;
+}
+
+#tocMenuButton {
+	display: none;
+}
+
+#tocMenuButtonLabel {
+	font-size: 2em;
+	color: $orange;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	padding: 16px;
+	z-index: 1;
+}
+
+#tocMenuButton:checked ~ #tocContainer {
+	display: block;
+	border: 1px solid $darkblue;
+	position: fixed;
+	top: 1em;
+	right: 1em;
+	bottom: 1em;
+	min-width: 10vw;
+	max-width: 30vw;
+	background-color: $lightgrey;
+	z-index: 1;
+	overflow-x: hidden;
+	min-height: 10vh;
+	max-height: 80vh;
+
+	h1 {
+		text-shadow: 0px 2px 4px rgba(100,100,100,0.5);
+		color: $darkblue;
+		font-size: 2em;
+		font-weight: bold;
+		letter-spacing: 20px;
+		text-align: center;
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	li a{
+		border-bottom: 1px dashed $lightblue;
+		opacity: 0.8;
+		width: 80%;
+		display: block;
+	}
+
+	a {
+		text-decoration: none;
+		color: $lightblue;
+		font-size: 1em;
+		line-height: 1.5em;
+	}
+
+	a:hover {
+		@include hover();
+	}
+}
+
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* header layout */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+
+
+.post_header::after {
+	content: "";
+	display: block;
+	border-top: 1px solid $lightblue;
+	margin-left: -100vw;
+	margin-right: -100vw;
+	margin-bottom: 4em;
+	margin-top: 4em;
+	width: 200vw; //only working with overflow-x: hidden; in body in _base.scss
+}
+
+#post article {
+
+	.post_header {
+		position: relative;
+
+		a {
+			@include links($lightblue);
+			text-align: left;
+			padding: 0;
+		}
+
+
+		h1 {
+			color: $darkblue;
+			font-weight: bold;
+			font-family: Inter;
+			font-size: 2.5em;
+			letter-spacing: 2px;
+			margin-bottom: 0;
+		}
+
+		h3 {
+			color: $darkblue;
+			font-weight: normal;
+			margin-top: 0.5em;
+		}
+
+		.supplements {
+			color: $darkblue;
+			margin-top: 3em;
+		}
+
+		.supplements a {
+			/* Set links to display as block-level elements so capitalize works*/
+			display: inline-block;
+			&:hover {
+				@include hover();
+			}
+		  }
+
+		.supplements a::first-letter {
+			text-transform: capitalize;
+		  }
+
+		.supplements-sep::before {
+		    content: "\2022";
+		    padding-left: 0.5em;
+		    padding-right: 0.5em;
+		}
+
+		.supplements .supplements-category{
+			margin-bottom: 1em;
+			display: block;
+		}
+	}
+
+	.post_header_content_parting_line {
+		margin: 2em 0;
+	}
+}
