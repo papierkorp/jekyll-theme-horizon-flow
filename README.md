@@ -1,4 +1,4 @@
-# [Horizon Flow Jekyll Theme][1]
+# Horizon Flow Jekyll Theme
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat-square)](https://raw.githubusercontent.com/papierkorp/jekyll-theme-horizon-flow/main/LICENSE.txt)
 [![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.6-blue.svg?style=flat-square)](https://jekyllrb.com/)
