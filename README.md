@@ -11,13 +11,13 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your Jekyll site's `Gemfile`:
 
 ```ruby
-gem "blueslate_horizon"
+gem "jekyll-theme-horizon-flow"
 ```
 
 And add this line to your Jekyll site's `_config.yml`:
 
 ```yaml
-theme: blueslate_horizon
+theme: jekyll-theme-horizon-flow
 ```
 
 And then execute:
@@ -26,7 +26,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install blueslate_horizon
+    $ gem install jekyll-theme-horizon-flow
 
 ## Usage
 

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 Gem::Specification.new do |spec|
-  spec.name          = "blueslate_horizon"
+  spec.name          = "jekyll-theme-horizon-flow"
   spec.version       = "0.1.0"
   spec.authors       = ["Markus Schiller"]
   spec.email         = ["m.schiller@ymail.com"]
 
-  spec.summary       = "\"BlueSlate Horizon\" is a minimalist Jekyll theme characterized by a serene color palette of blue, gray, and orange. It features a clean, sidebar-free layout, keeping all content in a single, flowing <main>. The header remains fixed even while scrolling, ensuring easy navigation."
+  spec.summary       = "\"Horizon-Flow\" is a minimalist Jekyll theme characterized by a serene color palette of blue, gray, and orange. It features a clean, sidebar-free layout, keeping all content in a single, flowing <main>. The header remains fixed even while scrolling, ensuring easy navigation."
   spec.homepage      = "https://rubygems.org/profiles/papierkorp"
   spec.license       = "MIT"
 
