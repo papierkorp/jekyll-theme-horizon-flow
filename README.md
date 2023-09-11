@@ -1,5 +1,31 @@
 # Horizon Flow Jekyll Theme
 
+- [Installation](#installation)
+  - [Ruby Gem Method](#ruby-gem-method)
+  - [GitHub Pages Method](#github-pages-method)
+- [Structure](#structure)
+  - [Starting Fresh](#starting-fresh)
+  - [Starting from `jekyll new`](#starting-from-jekyll-new)
+- [Configuration](#configuration)
+  - [Site URL](#site-url)
+  - [Site Base URL](#site-base-url)
+  - [Navigation](#navigation)
+  - [Footer](#footer)
+  - [Footer Sidebar](#footer-sidebar)
+  - [Table of Contents](#table-of-contents)
+  - [paginate](#paginate)
+  - [default plugins](#default-plugins)
+- [Front Matter](#front-matter)
+- [Layouts](#layouts)
+  - [`layout: default`](#layout-default)
+  - [`layout: post`](#layout-post)
+  - [`layout: archive`](#layout-archive)
+  - [`layout: home`](#layout-home)
+  - [`layout: categories`](#layout-categories)
+  - [`layout: search`](#layout-search)
+  - [`layout: tags`](#layout-tags)
+
+
 [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat-square)](https://raw.githubusercontent.com/papierkorp/jekyll-theme-horizon-flow/main/LICENSE.txt)
 [![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.6-blue.svg?style=flat-square)](https://jekyllrb.com/)
 [![Ruby gem](https://img.shields.io/gem/v/jekyll-theme-so-simple.svg?style=flat-square)]()
@@ -25,7 +51,7 @@ If you're running Jekyll v3.5+ and self-hosting you can quickly install the them
 
 ### Ruby Gem Method
 
-1. Add this line to your Jekyll site's `Gemfile` (or [create one](example/Gemfile)):
+1. Add this line to your Jekyll site's `Gemfile`:
 
    ```ruby
    gem "jekyll-theme-horizon-flow"
