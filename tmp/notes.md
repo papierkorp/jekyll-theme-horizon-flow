@@ -314,6 +314,25 @@ vi _config.yml
 bundle exec jekyll serve --force-polling --livereload --trace
 ```
 
+## want to do
+
+wantodo
+
+Reading Time
+	how much words = 1 minute
+layouts
+	home layout
+		set amount of posts
+		add 3 rows?
+search 
+	exclude posts
+translation
+custom date format
+disable footer
+footer sidebar 
+	flexible content
+	column config
+more colors?
 
 
 ## Live gehen

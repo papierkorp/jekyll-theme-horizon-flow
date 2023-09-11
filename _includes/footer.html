@@ -15,13 +15,13 @@
         site.footer_sidebar.recentposts.enabled %}
   <aside class="footer_sidebar">
 
-    {% if site.footer_sidebar.description.enabled or true %}
+    {% if site.footer_sidebar.description.enabled %}
       <section class="footer_sitedescription">
         {{ site.description }}
       </section>
     {% endif %}
 
-    {% if site.footer_sidebar.categories.enabled or false %}
+    {% if site.footer_sidebar.categories.enabled %}
       <section class="footer_categories">
         <h3>Categories</h3>
         <ul>
@@ -44,7 +44,7 @@
       </section>
     {% endif %}
 
-    {% if site.footer_sidebar.tags.enabled or false %}
+    {% if site.footer_sidebar.tags.enabled %}
       <section class="footer_tags">
         <h3>Tags</h3>
         <ul>
@@ -67,7 +67,7 @@
       </section>
     {% endif %}
 
-    {% if site.footer_sidebar.recentposts.enabled or true %}
+    {% if site.footer_sidebar.recentposts.enabled %}
       <section class="footer_recentposts">
         <h3>Recent Posts</h3>
         <ul>

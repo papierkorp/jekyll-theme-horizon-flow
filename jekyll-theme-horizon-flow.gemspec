@@ -17,7 +17,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "jekyll", "~> 4.3"
   spec.add_development_dependency "jekyll-feed", "~> 0.17.0"
   spec.add_development_dependency "jekyll-paginate", "~> 0.18.0"
-  spec.add_development_dependency "jekyll-toc", "~> 1.1.0"
   spec.add_development_dependency "jekyll-sass-converter", "~> 3.0.0"
   spec.add_runtime_dependency "jekyll-sitemap", "~> 1.4.0"
   spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.8.0"

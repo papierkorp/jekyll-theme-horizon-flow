@@ -50,6 +50,14 @@ footer aside section:first-child:nth-last-child(4) ~ section {
   max-width: 25%;
 }
 
+/* five items */
+footer aside section:first-child:nth-last-child(5),
+footer aside section:first-child:nth-last-child(5) ~ section {
+  padding: 0 0 0 1em;
+  flex-grow: 1;
+  max-width: 20%;
+}
+
 footer aside section:first-child {
   padding: 0;
 }
