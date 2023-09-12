@@ -6,10 +6,34 @@
 {% if content.size > 0 %}
 {% assign words = content | number_of_words %}
 {% endif %}
-{% if words < 180 %}
-  <i class="fa fa-clock-o"></i>  1 min read
-{% elsif words < 360 %}
-  <i class="fa fa-clock-o"></i>  2 min read
+{% if words < site.words_per_minute %}
+  <i class="fa fa-clock-o"></i> {% if site.data.configurable_lables.read_time_before and site.data.configurable_lables.read_time_after %}
+  {{ site.data.configurable_lables.read_time_before }} 1 {{ site.data.configurable_lables.read_time_after }}
+{% elsif site.data.configurable_lables.read_time_before %}
+  {{ site.data.configurable_lables.read_time_before }} 1
+{% elsif site.data.configurable_lables.read_time_after %}
+  1 {{ site.data.configurable_lables.read_time_after }}
 {% else %}
-  <i class="fa fa-clock-o"></i>  {{ words | divided_by:180 }} min read
+  1 min read
+{% endif %}
+{% elsif words < site.words_per_minute*2 %}
+  <i class="fa fa-clock-o"></i>  {% if site.data.configurable_lables.read_time_before and site.data.configurable_lables.read_time_after %}
+  {{ site.data.configurable_lables.read_time_before }} 2 {{ site.data.configurable_lables.read_time_after }}
+{% elsif site.data.configurable_lables.read_time_before %}
+  {{ site.data.configurable_lables.read_time_before }} 2
+{% elsif site.data.configurable_lables.read_time_after %}
+  2 {{ site.data.configurable_lables.read_time_after }}
+{% else %}
+  2 min read
+{% endif %}
+{% else %}
+  <i class="fa fa-clock-o"></i> {% if site.data.configurable_lables.read_time_before and site.data.configurable_lables.read_time_after %}
+  {{ site.data.configurable_lables.read_time_before }} {{ words | divided_by:site.words_per_minute }} {{ site.data.configurable_lables.read_time_after }}
+{% elsif site.data.configurable_lables.read_time_before %}
+  {{ site.data.configurable_lables.read_time_before }} {{ words | divided_by:site.words_per_minute }}
+{% elsif site.data.configurable_lables.read_time_after %}
+  {{ words | divided_by:site.words_per_minute }} {{ site.data.configurable_lables.read_time_after }}
+{% else %}
+  {{ words | divided_by:site.words_per_minute }} min read
+{% endif %}
 {% endif %}

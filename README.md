@@ -34,10 +34,10 @@ This is my first ever theme or anything like this so I got a whole damn LOT of I
 
 This theme can offer:
 
-* Dynamically created Navigation
-* Dynamically created Footer with Icons and Social Links
+* Custom Navigation
+* Dynamically created Footer with Font Awesome Icons and Social Links
 * Flexible Footer-Sidebar (above the Footer) where you can include up to 5 elements. You can choose between 4 premade ones and self created ones
-* SEO best practices via [Jekyll SEO Tag][jekyll-seo-tag]
+* SEO best practices via [Jekyll SEO Tag](https://github.com/jekyll/jekyll-seo-tag)
 * Javascript free besides the optional search bar
 * supports tags and categories
 * offers an archive
@@ -47,27 +47,27 @@ This theme can offer:
 
 ## Installation
 
-If you're running Jekyll v3.5+ and self-hosting you can quickly install the theme as a Ruby gem. If you're hosting with [**GitHub Pages**](https://pages.github.com/) you can install as a [remote theme](https://github.com/benbalter/jekyll-remote-theme) or directly copy all of the theme files (see [structure](#structure) below) into your project.
+If you're running Jekyll v4.3+ and self-hosting you can quickly install the theme as a Ruby gem. If you're hosting with [**GitHub Pages**](https://pages.github.com/) you can install as a [remote theme](https://github.com/benbalter/jekyll-remote-theme) or directly copy all of the theme files (see [structure](#structure) below) into your project.
 
 ### Ruby Gem Method
 
 1. Add this line to your Jekyll site's `Gemfile`:
 
-   ```ruby
-   gem "jekyll-theme-horizon-flow"
-   ```
+```ruby
+gem "jekyll-theme-horizon-flow"
+```
 
 2. Add this line to your Jekyll site's `_config.yml` file:
 
-   ```yaml
-   theme: jekyll-theme-horizon-flow
-   ```
+```yaml
+theme: jekyll-theme-horizon-flow
+```
 
 3. Then run [Bundler](http://bundler.io/) to install the theme gem and dependencies:
 
-   ```terminal
-   bundle install
-   ```
+```terminal
+bundle install
+```
 
 ### GitHub Pages Method
 
@@ -75,9 +75,9 @@ GitHub Pages has added [full support](https://github.com/blog/2464-use-any-theme
 
 1. Replace `gem "jekyll"` with:
 
-   ```ruby
-   gem "github-pages", group: :jekyll_plugins
-   ```
+```ruby
+gem "github-pages", group: :jekyll_plugins
+```
 
 2. Run `bundle update` and verify that all gems install properly.
 
@@ -91,7 +91,7 @@ GitHub Pages has added [full support](https://github.com/blog/2464-use-any-theme
 If you're hosting several Jekyll based sites under the same GitHub username you will have to use Project Pages instead of User Pages. Essentially you rename the repo to something other than **USERNAME.github.io** and create a `gh-pages` branch off of `master`. For more details on how this works, check [GitHub's documentation](https://help.github.com/articles/user-organization-and-project-pages/).
 
 
-## Structure
+### Structure
 
 
 **Please note:** If you installed Horizon Flow via the Ruby Gem or remote theme methods, theme files found in `/_layouts`, `/_includes`, `/_sass`, and `/assets` will be missing from your project. This is normal as they are bundled with the [`jekyll-theme-horizon-flow`](https://rubygems.org/gems/jekyll-theme-horizon-flow) gem.
@@ -115,14 +115,17 @@ If you're hosting several Jekyll based sites under the same GitHub username you 
 ### Starting Fresh
 
 After creating a `Gemfile` and installing the theme you'll need to rename `index.md` to [`index.html`](index.html)
+Also you have to add `gem "jekyll-paginate"` to your `Gemfile`:
 
-If you want to use the full potential of this theme you should also follow along [Navigation setup](#Navigation) and create the following files in the root direcotry:
+```ruby
+group :jekyll_plugins do
+  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-paginate"
+end
+```
 
-* [`archive.md`](archive.md)
-* [`categories.md`](categories.md)
-* [`impressum.html`](impressum.html)
-* [`search.md`](search.md)
-* [`tags.md`](tags.md)
+If you want to use the full potential of this theme you should also follow along [Navigation setup](#Navigation)
+You can also configure most of the hard coded Labels if you follow this Instruction: [Configurable Lables](#configurable-lables)
 
 
 ### Starting from `jekyll new`
@@ -133,10 +136,111 @@ Edit your `Gemfile` and `_config.yml` files following the [installation guide](#
 
 ## Configuration
 
-Configuration of site-wide elements (`navigation`, `footer`, `footer-sidebar`, `title`, `description`, `url` etc.) happens in your project's `_config.yml`. See the [example configuration](example/_config.yml) in this repo for additional reference.
+Configuration of site-wide elements (`navigation`, `footer`, `footer-sidebar`, `title`, `description`, `url` etc.) happens in your project's `_config.yml`.
+
+Here is a example `_config.yaml`:
+
+```yaml
+url: "https://example.com"
+
+navigation:
+  - title: Home
+    url: /index.html
+  - title: Categories
+    url: /categories.html
+  - title: Tags
+    url: /tags.html
+  - title: Archive
+    url: /archive.html
+  - title: Search
+    url: /search.html
+
+# Footer Links
+footer_links:
+  - title: Feed
+    url: /feed.xml
+    icon: fa fa-rss
+  - title: GitHub
+    url: https://github.com/papierkorp
+    icon: fa fa-github
+  - title: Email
+    url: mailto:xxx@test.de
+    icon: fa fa-envelope
+  - title: Twitter
+    url: https://twitter.com
+    icon: fa fa-twitter
+  - title: Facebook
+    url: https://facebook.com
+    icon: fa fa-facebook
+  - title: Instagram
+    url: https://instagram.com
+    icon: fa fa-instagram
+  - title: Impressum
+    url: /impressum.html
+
+footer_sidebar:
+  description:
+    enabled: true
+  categories:
+    enabled: true
+    count: 30
+  tags:
+    enabled: true
+    count: 30
+  recentposts:
+    enabled: true 
+    count: 10
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+paginate: 5
+paginate_path: "/:num/"
+
+description: >- # this means to ignore newlines
+  <h1>
+    About Me
+  </h1>
+  <p>
+    This Text will be shown in the footer-sidebar.
+  </p>
+  <p>
+    You can put in whatever you like..
+  </p>
+
+
+highlighter: rouge
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+defaults:
+  -
+    scope:
+      path: "_posts"
+    values:
+      toc: yes
+      display_toc: true
+
+permalink: /posts/:title #remove date from link
+```
+
 Take a look [here](https://jekyllrb.com/docs/configuration/) for more Information.
 
 As for the possible Configurations this theme offers take note of the following:
+
+* [Site URL](#site-url)
+* [Site Base URL](#site-base-url)
+* [Navigation](#navigation)
+* [Footer](#footer)
+* [Footer Sidebar](#footer-sidebar)
+* [Table of Contents](#table-of-contents)
+* [paginate](#paginate)
+* [default plugins](#default-plugins)
 
 
 ### Site URL
@@ -292,14 +396,14 @@ footer_links:
 The footer Sidebar is the content directly above the footer.
 Per default there are 4 elements available:
 
-description: Uses the `description:` of `_config` to display all the data from there.
-categories: Shows random categories according to the count. And allows you to set the amount of columns.
-tags: Shows random categories according to the count. And allows you to set the amount of columns.
-recentposts: Shows the last posts according to the count. And allows you to set the amount of columns.
-extracontent: will be coming soon..
+**description:** Uses the `description:` of `_config` to display all the data from there.  
+**categories:** Shows random categories according to the count. And allows you to set the amount of columns.  
+**tags:** Shows random categories according to the count. And allows you to set the amount of columns.  
+**recentposts:** Shows the last posts according to the count. And allows you to set the amount of columns.  
+**extracontent:** will be coming soon.. For the best experience you should use an <h1></h1> on the top.
 
 ```yaml
-description: >- # this means to ignore newlines until "baseurl:"
+description: >- # this means to ignore newlines until
   <h1>
     This is me
   </h1>
@@ -347,6 +451,13 @@ paginate: 5
 paginate_path: "/:num/"
 ```
 
+### Read Time
+
+You can change the default Reading Time which is set to 180 words per min by changing `words_per_minute` in the `_config`:
+
+```yaml
+words_per_minute: 180
+```
 
 ### default plugins
 
@@ -360,6 +471,35 @@ plugins:
   - jekyll-sitemap
 ```
 
+
+### Configurable Labels
+
+You dont have to configure anything, but if you dislike some terms you have the option to change them like this:
+
+Create a `_data` folder and in this folder a `configurable_lables.yaml` so in the end it looks like this: `./_data/configurable_lables.yaml`
+
+Now you can change the following Labels:
+
+| Name             | Description                                                                                                          | Example                                  |
+|------------------|----------------------------------------------------------------------------------------------------------------------|------------------------------------------|
+| read_time_before | Is used 2 times, first in the home layout when all posts are displayed under the title. Secondly in the post header. | read_time_before: "Estimated Read Time:" |
+| read_time_after  | Is used 2 times, first in the home layout when all posts are displayed under the title. Secondly in the post header. | read_time_after: "minutes"               |
+| last_modified_at | Is used in the post in the header.                                                                                   | last_modified_at: "Last Modified at:"    |
+|                  |                                                                                                                      |                                          |
+|                  |                                                                                                                      |                                          |
+|                  |                                                                                                                      |                                          |
+|                  |                                                                                                                      |                                          |
+
+**Example:**
+
+```yaml
+read_time_before: "Estimated Read Time:"
+read_time_after: "minutes"
+last_modified_at: "Last Modified at:"
+```
+
+
+
 ---
 
 ## Front Matter
@@ -368,16 +508,18 @@ Take a look [here](https://jekyllrb.com/docs/front-matter/) on what Front Matter
 
 This theme offers the following Front-Matter:
 
-| layout  | Name              | Description                                                                                                                   | Example                                                                                         |
-|-------- |------------------ |-----------------------------------------------------------------------------------------------------------------------------  |-----------------------------------------------------------------------------------------------  |
-| `post`  | subtitle          | Adds a subtitle to the post (optional)                                                                                        | ---<br>subtitle: "You're going to love this."<br>---                                            |
-| `post`  | display_toc       | true or false, shows the toc button on the bottom right (default: true)                                                       | ---<br>display_toc: false<br>---                                                                |
-| `post`  | last_modified_at  | Add extra meta-data when the post was last modified. It takes the date as you write it like a string.                         | ---<br>last_modified_at: 10.09.2023<br>---                                                      |
-| `post`  | search_keywords   | Add extra data to the [search.json](#layout-:-search) file                                                                    | ---<br>search_keywords: "words i didnt use in the tags"<br>---                                  |
-| `post`  | toTop             | true or false, shows the "To the Top" button on the bottom left (default: true)                                               | ---<br>toTop: false<br>---                                                                      |
-| `post`  | seoDescription    | Add a specific SEO Description for Search Engines, uses an automated excerpt otherwise. Can be at most 160 Characters long.   | ---<br>seoDescription: "Just a little summary to be better found in Search Engines =)"<br>---   |
-| `post`  | noheader          | Disable the whole header and only show the Content. (default: false)                                                          | ---<br>noheader: true<br>---                                                                    |
-| `home`  | noheader          | Disable the whole header and only show the Content. (default: false)                                                          | ---<br>noheader: true<br>---                                                                    |
+| layout | Name             | Description                                                                                                                 | Example                                                                                 |
+|--------|------------------|-----------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
+| `post` | subtitle         | Adds a subtitle to the post (optional)                                                                                      | ---<br>subtitle: "You're going to love this." <br>---                                        |
+| `post` | display_toc      | true or false, shows the toc button on the bottom right (default: true)                                                     | ---<br>display_toc: false <br>---                                                            |
+| `post` | last_modified_at | Add extra meta-data when the post was last modified. It takes the date as you write it like a string.                       | ---<br>last_modified_at: 10.09.2023 <br>---                                                  |
+| `post` | search_keywords  | Add extra data to the [search.json](#layout-:-search) file                                                                                | ---<br>search_keywords: "words i didnt use in the tags" <br>---                              |
+| `post` | toTop            | true or false, shows the "To the Top" button on the bottom left (default: true)                                             | ---<br>toTop: false <br>---                                                                  |
+| `post` | seoDescription   | Add a specific SEO Description for Search Engines, uses an automated excerpt otherwise. Can be at most 160 Characters long. | ---<br>seoDescription: "Just a little summary to be better found in Search Engines =)" ---<br>|
+| `post` | noheader         | Disable the whole header and only show the Content. (default: false)                                                        | ---<br>noheader: true <br>---                                                                |
+| `post` | searchable       | The post wont be included in the search.                                                                                    | ---<br>searchable: false <br>---                                                             |
+| `post` | show_supplements | The supplements (date, readtime, tags...) wont be shown.                                                                    | ---<br>show_supplements: false<br><br>---                                                 |
+| `home` | noheader         | Disable the whole header and only show the Content. (default: false)                                                        | ---<br>noheader: true <br>---                                                                |
 
 --- 
 
@@ -406,7 +548,8 @@ See [Front Matter](#front-matter) for more details on what you can use.
 
 ### `layout: archive`
 
-This layout displays all posts grouped by the year they were published.
+This layout displays all posts grouped by the year they were published. 
+There is no front matter for it.
 
 ### `layout: home`
 

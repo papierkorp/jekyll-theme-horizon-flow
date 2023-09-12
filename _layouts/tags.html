@@ -15,6 +15,7 @@ layout: default
     {% endcapture %}
     {% assign sortedTags = site_tags | split: '&#x1E;' | sort | reverse %}
 
+    {% if sortedTags.size > 0 %}
     <!-- Show all tags sorted by count -->
     <div class="tags_all">
       <ul>
@@ -31,6 +32,15 @@ layout: default
         {% endfor %}
       </ul>
     </div>
+    {% else %}
+    <!-- Display an empty list when sortedTags is empty -->
+    <div class="tags_all">
+      <ul>
+        <li>No tags available.</li>
+      </ul>
+    </div>
+    {% endif %}
+
 
     <!-- Show posts for selected tag -->
     <div class="tags_results">

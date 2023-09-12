@@ -14,8 +14,9 @@
         <link rel="canonical" href="{{ page.url | replace:'index.html', '' | absolute_url }}">
     </head>
 
-
     <body>
+        <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+        <link rel="shortcut icon" href="#">
         {% include header.html %}
 
         {{ content }}

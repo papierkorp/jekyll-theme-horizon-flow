@@ -3,8 +3,8 @@
 
 [
   {% for post in site.posts %}
+    {% if post.searchable != false %}
     {
-
       "title"    : "{{ post.title | escape }}",
       "summary"  : "{{ post.content | markdownify | strip_html | truncatewords: 50 }}",
       "url"      : "{{ site.baseurl }}{{ post.url }}",
@@ -14,7 +14,7 @@
       "date"     : "{{ post.date }}",
       "date_day" : "{{ post.date | date: "%d" }}",
       "date_my"  : "{{ post.date | date: "%b/%Y" }}"
-
-    } {% unless forloop.last %},{% endunless %}
+    }{% unless forloop.last %},{% endunless %}
+    {% endif %}
   {% endfor %}
 ]

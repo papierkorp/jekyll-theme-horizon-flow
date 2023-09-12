@@ -6,9 +6,10 @@ layout: default
   <section>
     <h1>Archive</h1>
 
+    {% if site.posts.size > 0 %}
     <!-- show all years -->
     <div class="archive_all_years">
-      <ul >
+      <ul>
         {% assign postsByYear = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}
         {% for year in postsByYear %}
           <li>
@@ -20,6 +21,15 @@ layout: default
         {% endfor %}
       </ul>
     </div>
+    {% else %}
+    <!-- Display an empty list when there are no posts -->
+    <div class="archive_all_years">
+      <ul>
+        <li>No archive years available.</li>
+      </ul>
+    </div>
+    {% endif %}
+
 
 
 

@@ -87,6 +87,7 @@
 
 
 
+  {% if site.footer_links.size > 0 %}
   <div class="social-icons item3">
     {% for link in site.footer_links %}
       {% if link.icon %}
@@ -99,6 +100,6 @@
       {% endunless %}
     {% endfor %}
   </div>
-
+  {% endif %}
 
 </footer>

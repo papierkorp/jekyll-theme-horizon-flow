@@ -299,40 +299,18 @@ Available Layouts:
 
 ```bash
 #cd ./develop/papierkorp-theme
-gem build papierkorp-theme.gemspec #erstellt eine Gemfile im Ordner, dieses gem File (Pfad) bei meiner Jekyll Seite hinzufügen
-gem build jekyll-theme-horizon-flow.gemspec
+gem build jekyll-theme-horizon-flow.gemspec #erstellt eine Gemfile im Ordner, dieses gem File (Pfad) bei meiner Jekyll Seite hinzufügen
 
 #cd ./develop
 jekyll new testblog
 vi Gemfile
-	gem "papierkorp-theme", path: "/mnt/c/develop/privat/papierkorp-theme/"
 	gem "jekyll-theme-horizon-flow", path: "/mnt/c/develop/privat/jekyll-theme-horizon-flow/"
 bundle
 vi _config.yml
-	theme: papierkorp-theme
 	theme: jekyll-theme-horizon-flow
 bundle exec jekyll serve --force-polling --livereload --trace
 ```
 
-## want to do
-
-wantodo
-
-Reading Time
-	how much words = 1 minute
-layouts
-	home layout
-		set amount of posts
-		add 3 rows?
-search 
-	exclude posts
-translation
-custom date format
-disable footer
-footer sidebar 
-	flexible content
-	column config
-more colors?
 
 
 ## Live gehen
@@ -342,10 +320,10 @@ Bei [Ruby Gems](https://rubygems.org/) registrieren um das Theme später hochzul
 ```bash
 #Erstellen
 vi ./screenshot.png #screenshot.png in root dir speichern
-vi papierkorp-theme.gemspec #Zum Finish die gemspec Datei mit Version, Author, Files befüllen
-gem build papierkorp-theme.gemspec
-gem push papierkorp-theme.gem
-gem yank papierkorp-theme #theme wieder löschen fals Fehler passiert sind
+vi jekyll-theme-horizon-flow.gemspec #Zum Finish die gemspec Datei mit Version, Author, Files befüllen
+gem build jekyll-theme-horizon-flow.gemspec
+gem push jekyll-theme-horizon-flow-0.1.0.gem
+gem yank jekyll-theme-horizon-flow #theme wieder löschen fals Fehler passiert sind
 ```
 
 
@@ -359,7 +337,25 @@ gem yank papierkorp-theme #theme wieder löschen fals Fehler passiert sind
 
 ## Todo
 
-- copy and paste code blocks
+- layouts
+	+ home layout
+		* set amount of posts => paginate
+		* add 3 rows?
+	+ page layout
+		* tags, categories, archive
+			- set columns
+- configurable_labels
+	+ Found Posts per selected Categorie
+	+ title: Categories
+	+ custom date format
+- footer sidebar 
+	+ flexible content
+		* per `_config`
+		* per Include
+	+ column config
+- more colors?
+- about.markdown (default)
+
 
 ## Tipps und Tricks
 

@@ -15,6 +15,7 @@ layout: default
     {% endcapture %}
     {% assign sortedCategories = site_categories | split: '&#x1E;' | sort | reverse %}
 
+    {% if sortedCategories.size > 0 %}
     <!-- Show all categories sorted by count -->
     <div class="categories_all">
       <ul>
@@ -31,6 +32,15 @@ layout: default
         {% endfor %}
       </ul>
     </div>
+    {% else %}
+    <!-- Display an empty list when sortedCategories is empty -->
+    <div class="categories_all">
+      <ul>
+        <li>No categories available.</li>
+      </ul>
+    </div>
+    {% endif %}
+
 
 
 
