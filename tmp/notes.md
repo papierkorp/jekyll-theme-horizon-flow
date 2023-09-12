@@ -338,9 +338,6 @@ gem yank jekyll-theme-horizon-flow #theme wieder löschen fals Fehler passiert s
 ## Todo
 
 - layouts
-	+ home layout
-		* set amount of posts => paginate
-		* add 3 rows?
 	+ page layout
 		* tags, categories, archive
 			- set columns
@@ -355,6 +352,12 @@ gem yank jekyll-theme-horizon-flow #theme wieder löschen fals Fehler passiert s
 	+ column config
 - more colors?
 - about.markdown (default)
+
+maybetodo
+
+- layouts
+	+ home layout
+		* add 3 rows?
 
 
 ## Tipps und Tricks

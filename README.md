@@ -390,6 +390,21 @@ footer_links:
     url: /impressum.html
 ```
 
+### Layouts
+
+In here you can define the amount of columns used to display all tags/categories/years via the `_config`.
+Available values are `1-5`.
+
+```yaml
+layouts:
+  tags:
+    columns: 5  # default 4
+  categories:
+    columns: 3  # default 3
+  archive:
+    columns: 1  # default 2
+```
+
 
 ### Footer Sidebar
 
@@ -419,16 +434,19 @@ description: >- # this means to ignore newlines until
 
 footer_sidebar:
   description:
-    enabled: true #default: true
+    enabled: true  # default: true
   categories:
-    enabled: true #default: false
-    count: 100 #default: 100
+    enabled: true  # default: false
+    count: 100  # default: 100
+    columns: 2  # default: 2
   tags:
-    enabled: true #default: false
-    count: 100 #default: 100
+    enabled: true  # default: false
+    count: 100  # default: 100
+    columns: 4  # default: 4
   recentposts:
-    enabled: true #default: true
-    count: 10 #default: 10
+    enabled: true  # default: true
+    count: 10  # default: 10
+    columns: 2  #  default: 2
 ```
 
 ### Table of Contents

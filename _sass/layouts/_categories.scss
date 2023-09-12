@@ -17,6 +17,25 @@
 	@include showlinks(3);
 }
 
+.categories_all1 {
+	@include showlinks(1);
+}
+
+.categories_all2 {
+	@include showlinks(2);
+}
+
+.categories_all3 {
+	@include showlinks(3);
+}
+
+.categories_all4 {
+	@include showlinks(4);
+}
+
+.categories_all5 {
+	@include showlinks(5);
+}
 
 
 /* ---------------------------------------------------- */

@@ -139,6 +139,11 @@
             li {
                 width: calc(25% - 2.5rem);
             }
+        } @else if $rows == 5 {
+            column-gap: 2rem;
+            li {
+                width: calc(20% - 2rem);
+            }
         }
 
         li {

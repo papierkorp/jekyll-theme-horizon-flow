@@ -44,14 +44,23 @@ footer_sidebar:
   categories:
     enabled: false
     count: 100
+    columns: 2
   tags:
     enabled: false
     count: 100
+    columns: 5
   recentposts:
     enabled: false
     count: 10
+    columns: 2
 
-asdf: #000
+layouts:
+  tags:
+    columns: 10
+  categories:
+    columns: 2
+  archive:
+    columns: 5
 
 
 plugins:
