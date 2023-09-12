@@ -343,6 +343,120 @@ gem yank jekyll-theme-horizon-flow #theme wieder löschen falls Fehler passiert 
 - more colors?
 
 
+```
+read_time_after: "min read"
+words_per_minute: 180
+
+url: "https://example.com"
+
+navigation:
+  - title: Home
+    url: /index.html
+  - title: Categories
+    url: /categories.html
+  - title: Tags
+    url: /tags.html
+  - title: Archive
+    url: /archive.html
+  - title: Search
+    url: /search.html
+
+# Footer Links
+footer_links:
+  - title: Feed
+    url: /feed.xml
+    icon: fa fa-rss
+  - title: GitHub
+    url: https://github.com/papierkorp
+    icon: fa fa-github
+  - title: Email
+    url: mailto:xxx@test.de
+    icon: fa fa-envelope
+  - title: Twitter
+    url: https://twitter.com
+    icon: fa fa-twitter
+  - title: Facebook
+    url: https://facebook.com
+    icon: fa fa-facebook
+  - title: Instagram
+    url: https://instagram.com
+    icon: fa fa-instagram
+  - title: Impressum
+    url: /impressum.html
+
+footer_sidebar:
+  arrangement:
+  - description
+  - tags
+  - categories
+  - extracontent2
+  - recentposts
+  description:
+    enabled: true
+  categories:
+    enabled: true
+    count: 100
+    columns: 1
+  tags:
+    enabled: true
+    count: 100
+    columns: 3
+  recentposts:
+    enabled: true
+    count: 10
+    columns: 2
+  custom_content:
+    enabled: true
+    data: >-
+      <h3>CUSTOM CONTENT</h3>
+      <p>not really content though...</p>
+  custom_content2:
+    enabled: false
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+paginate: 5
+paginate_path: "/:num/"
+
+include: [".md"]
+
+description: >- # this means to ignore newlines until "baseurl:"
+  <h3>
+    This is me
+  </h3>
+  <p>
+    Im a german guy from bavaria currently working as a devops engineer. I will try to keep the blog in english but may switch to german any time.
+  </p>
+  <p>
+    Here you will find a collection of blogs, tutorials, snippets or introductions mainly on (mostly modern) tech.
+    Also a few bits of gaming, fitness, finances and mabye (a big maybe) cooking.
+    I may find other topics of interest as well :D
+  </p>
+
+
+highlighter: rouge
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+lang: en
+
+defaults:
+  -
+    scope:
+      path: "_posts"
+    values:
+      toc: yes
+      display_toc: true
+
+permalink: /posts/:title #remove date from link
+```
+
 
 ## Tipps und Tricks
 
