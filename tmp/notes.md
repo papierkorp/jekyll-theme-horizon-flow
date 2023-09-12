@@ -338,7 +338,8 @@ gem yank jekyll-theme-horizon-flow #theme wieder löschen falls Fehler passiert 
 ## Todo
 
 
-
+- [Cookies](http://www.plainionist.net/Blogging-with-Jekyll-Legal-Privacy/)
+- [Robots.txt](http://www.plainionist.net/Blogging-with-Jekyll-Legal-Privacy/)
 - more colors?
 
 
