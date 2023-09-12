@@ -34,7 +34,7 @@
 
 @mixin page_title() {
     text-shadow: 0px 2px 4px rgba(100,100,100,0.5);
-    color: #060606;
+    color: $darkblue;
     font-family: Inter;
     font-size: 36px;
     font-weight: 700;
@@ -124,7 +124,12 @@
         row-gap: 1rem;
 
         // Each item takes half of the container width minus the gap
-        @if $rows == 2 {
+        @if $rows == 1 {
+            column-gap: 5rem;
+            li {
+                width: calc(100% - 5rem);
+            }
+        } @else if $rows == 2 {
             column-gap: 5rem;
             li {
                 width: calc(50% - 5rem);

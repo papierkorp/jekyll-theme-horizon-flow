@@ -17,7 +17,7 @@ layout: default
 
     {% if sortedTags.size > 0 %}
     <!-- Show all tags sorted by count -->
-    <div class="tags_all{% if site.layouts.tags.columns >= 1 or site.layouts.tags.columns <= 5 %}{{site.layouts.tags.columns}}{% else %}4{% endif %}">
+    <div class="tags_all{% if site.layouts.tags.columns and site.layouts.tags.columns >= 1 and site.layouts.tags.columns <= 5 %}{{site.layouts.tags.columns}}{% else %}4{% endif %}">
       <ul>
         {% for tag in sortedTags %}
           {% assign tagParts = tag | split: '&#x1F;' %}

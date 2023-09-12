@@ -43,3 +43,24 @@
 .search_summary {
     @include findresults_summary();
 }
+
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* search Button */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+
+
+#search-input {
+    border: 6px solid $orange;
+    border-radius: 2em;
+    padding: 0.5em 2em;
+    background-color: $lightgrey;
+    margin-bottom: 4em;
+    box-shadow: 10px 10px $darkblue;
+}
+
+#search-input:focus {
+    outline: none
+}

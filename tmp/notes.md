@@ -337,10 +337,7 @@ gem yank jekyll-theme-horizon-flow #theme wieder löschen fals Fehler passiert s
 
 ## Todo
 
-- layouts
-	+ page layout
-		* tags, categories, archive
-			- set columns
+
 - configurable_labels
 	+ Found Posts per selected Categorie
 	+ title: Categories

@@ -54,15 +54,6 @@ footer_sidebar:
     count: 10
     columns: 2
 
-layouts:
-  tags:
-    columns: 10
-  categories:
-    columns: 2
-  archive:
-    columns: 5
-
-
 plugins:
   - jekyll-feed
   - jekyll-paginate

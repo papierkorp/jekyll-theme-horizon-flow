@@ -17,7 +17,7 @@ layout: default
 
     {% if sortedCategories.size > 0 %}
     <!-- Show all categories sorted by count -->
-    <div class="categories_all{% if site.layouts.categories.columns >= 1 or site.layouts.categories.columns <= 5 %}{{site.layouts.categories.columns}}{% else %}3{% endif %}">
+    <div class="categories_all{% if site.layouts.categories.columns and site.layouts.categories.columns >= 1 and site.layouts.categories.columns <= 5 %}{{site.layouts.categories.columns}}{% else %}3{% endif %}">
       <ul>
         {% for category in sortedCategories %}
           {% assign categoryParts = category | split: '&#x1F;' %}
