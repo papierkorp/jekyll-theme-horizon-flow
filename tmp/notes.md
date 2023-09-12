@@ -322,8 +322,8 @@ Bei [Ruby Gems](https://rubygems.org/) registrieren um das Theme später hochzul
 vi ./screenshot.png #screenshot.png in root dir speichern
 vi jekyll-theme-horizon-flow.gemspec #Zum Finish die gemspec Datei mit Version, Author, Files befüllen
 gem build jekyll-theme-horizon-flow.gemspec
-gem push jekyll-theme-horizon-flow-0.1.0.gem
-gem yank jekyll-theme-horizon-flow #theme wieder löschen fals Fehler passiert sind
+gem push jekyll-theme-horizon-flow-0.1.1.gem
+gem yank jekyll-theme-horizon-flow #theme wieder löschen falls Fehler passiert sind
 ```
 
 
@@ -338,23 +338,9 @@ gem yank jekyll-theme-horizon-flow #theme wieder löschen fals Fehler passiert s
 ## Todo
 
 
-- configurable_labels
-	+ Found Posts per selected Categorie
-	+ title: Categories
-	+ custom date format
-- footer sidebar 
-	+ flexible content
-		* per `_config`
-		* per Include
-	+ column config
+
 - more colors?
-- about.markdown (default)
 
-maybetodo
-
-- layouts
-	+ home layout
-		* add 3 rows?
 
 
 ## Tipps und Tricks

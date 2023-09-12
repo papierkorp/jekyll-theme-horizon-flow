@@ -3,20 +3,29 @@
 - [Installation](#installation)
   - [Ruby Gem Method](#ruby-gem-method)
   - [GitHub Pages Method](#github-pages-method)
-- [Structure](#structure)
+  - [Structure](#structure)
   - [Starting Fresh](#starting-fresh)
-  - [Starting from `jekyll new`](#starting-from-jekyll-new)
 - [Configuration](#configuration)
   - [Site URL](#site-url)
   - [Site Base URL](#site-base-url)
   - [Navigation](#navigation)
+- [```html](#html)
+- [```markdown](#markdown)
+- [```markdown](#markdown-1)
+- [```markdown](#markdown-2)
+- [```markdown](#markdown-3)
+- [```html](#html-1)
+- [```markdown](#markdown-4)
   - [Footer](#footer)
+  - [Layouts](#layouts)
   - [Footer Sidebar](#footer-sidebar)
   - [Table of Contents](#table-of-contents)
   - [paginate](#paginate)
+  - [Read Time](#read-time)
   - [default plugins](#default-plugins)
+  - [Configurable Labels](#configurable-labels)
 - [Front Matter](#front-matter)
-- [Layouts](#layouts)
+- [Layouts](#layouts-1)
   - [`layout: default`](#layout-default)
   - [`layout: post`](#layout-post)
   - [`layout: archive`](#layout-archive)
@@ -24,11 +33,12 @@
   - [`layout: categories`](#layout-categories)
   - [`layout: search`](#layout-search)
   - [`layout: tags`](#layout-tags)
+- [whislist](#whislist)
 
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat-square)](https://raw.githubusercontent.com/papierkorp/jekyll-theme-horizon-flow/main/LICENSE.txt)
 [![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.6-blue.svg?style=flat-square)](https://jekyllrb.com/)
-[![Ruby gem](https://img.shields.io/gem/v/jekyll-theme-so-simple.svg?style=flat-square)]()
+[![Ruby gem](https://img.shields.io/gem/v/jekyll-theme-so-simple.svg?style=flat-square)](https://rubygems.org/gems/jekyll-theme-horizon-flow)
 
 This is my first ever theme or anything like this so I got a whole damn LOT of Inspiration and Ideas of the [So Simple](https://github.com/mmistakes/so-simple-theme/tree/master) theme from [mmistakes](https://github.com/mmistakes). Also i almost completly copied his readme pls forgive me <3.
 
@@ -36,14 +46,24 @@ This theme can offer:
 
 * Custom Navigation
 * Dynamically created Footer with Font Awesome Icons and Social Links
-* Flexible Footer-Sidebar (above the Footer) where you can include up to 5 elements. You can choose between 4 premade ones and self created ones
+* Flexible customizable Footer-Sidebar (above the Footer) where you can include up to 5 elements. You can choose between 4 premade ones and self created ones
 * SEO best practices via [Jekyll SEO Tag](https://github.com/jekyll/jekyll-seo-tag)
-* Javascript free besides the optional search bar
+* Javascript free besides the optional search page
 * supports tags and categories
 * offers an archive
 * Carefully designed posts for almost all Markup elements
+* Activateable TOC and to the TOP Buttons for each post
 
----------------------SCREENSHOTS---------------------
+![Horizon Flow Screenshots](screenshot.png)
+![Horizon Flow Screenshots](post.png)
+![Horizon Flow Screenshots](post_toc.png)
+![Horizon Flow Screenshots](categories.png)
+![Horizon Flow Screenshots](tags.png)
+![Horizon Flow Screenshots](archive.png)
+
+![Horizon Flow Screenshots](search.png)
+
+
 
 ## Installation
 
@@ -114,8 +134,13 @@ If you're hosting several Jekyll based sites under the same GitHub username you 
 
 ### Starting Fresh
 
+Using the `jekyll new` command will get you up and running the quickest.
+
+Edit your `Gemfile` and `_config.yml` files following the [Installation guide](#installation) above and [Configuration guide](#configuration) below.
+
+
 After creating a `Gemfile` and installing the theme you'll need to rename `index.md` to [`index.html`](index.html)
-Also you have to add `gem "jekyll-paginate"` to your `Gemfile`:
+Also you have to add `gem "jekyll-paginate"` to your `Gemfile` plugins list:
 
 ```ruby
 group :jekyll_plugins do
@@ -128,11 +153,6 @@ If you want to use the full potential of this theme you should also follow along
 You can also configure most of the hard coded Labels if you follow this Instruction: [Configurable Lables](#configurable-lables)
 
 
-### Starting from `jekyll new`
-
-Using the `jekyll new` command will get you up and running the quickest.
-
-Edit your `Gemfile` and `_config.yml` files following the [installation guide](#installation) above and [configuration guide](#configuration) below.
 
 ## Configuration
 
@@ -141,6 +161,9 @@ Configuration of site-wide elements (`navigation`, `footer`, `footer-sidebar`, `
 Here is a example `_config.yaml`:
 
 ```yaml
+read_time_after: "min read"
+words_per_minute: 180
+
 url: "https://example.com"
 
 navigation:
@@ -179,17 +202,33 @@ footer_links:
     url: /impressum.html
 
 footer_sidebar:
+  arrangement:
+  - description
+  - tags
+  - categories
+  - extracontent2
+  - recentposts
   description:
     enabled: true
   categories:
     enabled: true
-    count: 30
+    count: 100
+    columns: 1
   tags:
     enabled: true
-    count: 30
+    count: 100
+    columns: 3
   recentposts:
-    enabled: true 
+    enabled: true
     count: 10
+    columns: 2
+  custom_content:
+    enabled: true
+    data: >-
+      <h3>CUSTOM CONTENT</h3>
+      <p>not really content though...</p>
+  custom_content2:
+    enabled: false
 
 plugins:
   - jekyll-feed
@@ -200,15 +239,19 @@ plugins:
 paginate: 5
 paginate_path: "/:num/"
 
-description: >- # this means to ignore newlines
-  <h1>
-    About Me
-  </h1>
+include: [".md"]
+
+description: >- # this means to ignore newlines until "baseurl:"
+  <h3>
+    This is me
+  </h3>
   <p>
-    This Text will be shown in the footer-sidebar.
+    Im a german guy from bavaria currently working as a devops engineer. I will try to keep the blog in english but may switch to german any time.
   </p>
   <p>
-    You can put in whatever you like..
+    Here you will find a collection of blogs, tutorials, snippets or introductions mainly on (mostly modern) tech.
+    Also a few bits of gaming, fitness, finances and mabye (a big maybe) cooking.
+    I may find other topics of interest as well :D
   </p>
 
 
@@ -217,6 +260,8 @@ kramdown:
   syntax_highlighter_opts:
     block:
       line_numbers: true
+
+lang: en
 
 defaults:
   -
@@ -411,42 +456,51 @@ layouts:
 The footer Sidebar is the content directly above the footer.
 Per default there are 4 elements available:
 
-**description:** Uses the `description:` of `_config` to display all the data from there.  
-**categories:** Shows random categories according to the count. And allows you to set the amount of columns.  
-**tags:** Shows random categories according to the count. And allows you to set the amount of columns.  
-**recentposts:** Shows the last posts according to the count. And allows you to set the amount of columns.  
-**extracontent:** will be coming soon.. For the best experience you should use an <h1></h1> on the top.
+**description:** Uses the `description:` of `_config` to display all the data from there. For the best experience you should use an <h1></h1> on the top.  
+**categories:** Shows random categories according to the count.  
+**tags:** Shows random categories according to the count.  
+**recentposts:** Shows the last posts according to the count.  
+**custom_content:** As seen in the example below you can add custom content in two ways, the content can include `html` code.
+**custom_content2:** same as `custom_content`.
+
+You can set the Arrangement of the given elements like in the example below.
+
+**Note**, if you dont set the Arrangement **nothing** will be displayed! Also if you want the categories and tags links to work you need to follow the [Navigation Setup](#navigation)
 
 ```yaml
 description: >- # this means to ignore newlines until
-  <h1>
+  <h3>
     This is me
-  </h1>
+  </h3>
   <p>
-    Im a german guy from bavaria currently working as a devops engineer. I will try to keep the blog in english but may switch to german any time.
+    I just created my first theme .. hurray :D
   </p>
-  <p>
-    Here you will find a collection of blogs, tutorials, snippets or introductions mainly on (mostly modern) tech.
-    Also a few bits of gaming, fitness, finances and mabye (a big maybe) cooking.
-    I may find other topics of interest as well :D
-  </p>
-
 
 footer_sidebar:
+  arrangement:  # you can rearrange the positions of the elements
+  - description  # will be the first one to be displayed
+  - tags  # second in the row ...
+  - custom_content
+  - recentposts  # will be displayed last
   description:
     enabled: true  # default: true
   categories:
     enabled: true  # default: false
     count: 100  # default: 100
-    columns: 2  # default: 2
   tags:
     enabled: true  # default: false
     count: 100  # default: 100
-    columns: 4  # default: 4
   recentposts:
     enabled: true  # default: true
     count: 10  # default: 10
-    columns: 2  #  default: 2
+  custom_content:
+    enabled: true
+    data: >-
+      <h3>EXTRACONTENT</h3>
+      <p>not really content though...</p>
+  custom_content2:
+    enabled: false
+    data: "<h3>mhm</h3>"
 ```
 
 ### Table of Contents
@@ -498,22 +552,38 @@ Create a `_data` folder and in this folder a `configurable_lables.yaml` so in th
 
 Now you can change the following Labels:
 
-| Name             | Description                                                                                                          | Example                                  |
-|------------------|----------------------------------------------------------------------------------------------------------------------|------------------------------------------|
-| read_time_before | Is used 2 times, first in the home layout when all posts are displayed under the title. Secondly in the post header. | read_time_before: "Estimated Read Time:" |
-| read_time_after  | Is used 2 times, first in the home layout when all posts are displayed under the title. Secondly in the post header. | read_time_after: "minutes"               |
-| last_modified_at | Is used in the post in the header.                                                                                   | last_modified_at: "Last Modified at:"    |
-|                  |                                                                                                                      |                                          |
-|                  |                                                                                                                      |                                          |
-|                  |                                                                                                                      |                                          |
-|                  |                                                                                                                      |                                          |
+| Name                      | Description                                                                                                           | Example + default value                                 | Example                                                                                         |
+|-------------------------- |---------------------------------------------------------------------------------------------------------------------- |-------------------------------------------------------- |-----------------------------------------------------------------------------------------------  |
+| read_time_before          | Is used 2 times, first in the home layout when all posts are displayed under the title. Secondly in the post header.  | read_time_before: ""                                    | ---<br>subtitle: "You're going to love this."<br>---                                            |
+| read_time_after           | Is used 2 times, first in the home layout when all posts are displayed under the title. Secondly in the post header.  | read_time_after: "min read"                             | ---<br>display_toc: false<br>---                                                                |
+| last_modified_at          | Is used in the post in the header.                                                                                    | last_modified_at: "Last Modified at:"                   | ---<br>last_modified_at: 10.09.2023<br>---                                                      |
+| search_title              | The title used in the `search` layout.                                                                                | search_title: "Search"                                  | ---<br>search_keywords: "words i didnt use in the tags"<br>---                                  |
+| archive_title             | The title used in the `archive` layout.                                                                               | archive_title: "Archive"                                | ---<br>toTop: false<br>---                                                                      |
+| archive_found             | The text displayed in the `archive` layout, under all years.                                                          | archive_found: "Found Posts per selected Year"          | ---<br>seoDescription: "Just a little summary to be better found in Search Engines =)"<br>---   |
+| archive_nothing_found     | The text displayed in the `archives` layout if no archives exist.                                                     | archive_nothing_found: "No archive years available."    | ---<br>noheader: true<br>---                                                                    |
+| tags_title                | The title used in the `tags` layout.                                                                                  | tags_title: "Tags"                                      |                                                                                                 |
+| tags_found                | The text displayed in the `tags` layout, under all years.                                                             | tags_found: "Found Posts per selected Tag"              |                                                                                                 |
+| tags_nothing_found        | The text displayed in the `tags` layout if no tags exist.                                                             | tags_nothing_found: "No tags available."                |                                                                                                 |
+| categories_title          | The title used in the `categories` layout.                                                                            | categories_title: "Categories"                          |                                                                                                 |
+| categories_found          | The text displayed in the `categories` layout, under all years.                                                       | categories_found: "Found Posts per selected Categorie"  |                                                                                                 |
+| categories_nothing_found  | The text displayed in the `categories` layout if no categories exist.                                                 | categories_nothing_found: "No categories available."    |                                                                                                 |
 
-**Example:**
+**Example: (default Values)**
 
 ```yaml
-read_time_before: "Estimated Read Time:"
-read_time_after: "minutes"
+read_time_before: ""
+read_time_after: "min read"
 last_modified_at: "Last Modified at:"
+search_title: "Search"
+archive_title: "Archive"
+archive_found: "Found Posts per selected Year"
+archive_nothing_found: "No archive years available."
+tags_title: "Tags"
+tags_found: "Found Posts per selected Tag"
+tags_nothing_found: "No tags available."
+categories_title: "Categories"
+categories_found: "Found Posts per selected Categorie"
+categories_nothing_found: "No categories available."
 ```
 
 
@@ -603,3 +673,13 @@ It uses `_assets/search.json` as a base. `search.json` will be generated with th
 
 This layout displays all posts grouped by tag.
 There is no front matter for it.
+
+
+# whislist
+
+- footer
+  + make the columns in the footer-sidebar (tags, categories, recent posts) configurable
+  + fix for mobile screens
+- post
+  + fix TOC for mobile screens
+- more colors

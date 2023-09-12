@@ -11,7 +11,7 @@ header {
 
 
 header nav {
-	background-color: $darkblue;
+	background-color: $primary-color;
 	width: fit-content;
 	margin: auto;
 	padding-left: 10px;
@@ -35,7 +35,7 @@ nav li {
 }
 
 nav li a {
-	@include links($lightgrey);
+	@include links($background-color);
 	text-transform: uppercase;
 	letter-spacing: -1.5px;
 	font-size: 0.8em;
@@ -50,7 +50,7 @@ nav li a {
 /* Line above the Navi */
 #header_hr {
 	border-bottom: 0;
-	border-top: 0.5em solid $darkblue;
+	border-top: 0.5em solid $primary-color;
 	border-left: 0;
 	border-right: 0;
 	width: 100%;

@@ -21,17 +21,17 @@
 		font-size: 1.5em;
 		font-style: italic;
 		letter-spacing: 5px;
-		border-left: 5px solid $darkblue;
+		border-left: 5px solid $primary-color;
 		padding: 0.5em;
 		margin-top: 3em;
-		background-color: $lightgrey;
+		background-color: $background-color;
 		margin-left: calc(-1em + 5px);; // 14px*2 padding - 5px border
 	}
 
 
 	h2 {
 		@include default_header(0);
-		border-bottom: 1px solid $darkblue;
+		border-bottom: 1px solid $primary-color;
 		font-size: 1.25em;
 		margin-top: 2.5em;
 	}
@@ -62,7 +62,7 @@
 		padding: 16px;
 
 		i {
-			color: $orange;
+			color: $accent-color;
 			font-size: 1.8em;
 		}
 	}
@@ -70,7 +70,7 @@
 	// blockquotes
 
 	blockquote {
-		background: $lightgrey;
+		background: $background-color;
 		border-left: 10px solid #ccc;
 		margin: 1.5em 1em;
 		padding: 0.5em 10px;
@@ -99,18 +99,18 @@
 	}
 
 	td, th {
-	  border: 1px solid $darkblue;
+	  border: 1px solid $primary-color;
 	  padding: 8px;
 	}
 
 	tr:nth-child(even){background-color: rgba(0, 0, 0, 10%);}
 
-	tr:hover {background-color: $orange;}
+	tr:hover {background-color: $accent-color;}
 
 	th {
 	  padding-top: 12px;
 	  padding-bottom: 12px;
-	  background-color: $darkblue;
+	  background-color: $primary-color;
 	  color: white;
 	  text-align: center;
 	}
@@ -121,7 +121,7 @@
 	.highlight {
 		pre {
 			padding: 1em;
-			color: $lightgrey;
+			color: $background-color;
 			overflow: auto;
 		}
 
@@ -146,8 +146,8 @@
 	// Inline Code Block
 	code.highlighter-rouge {
 		font-style: italic;
-		color: $darkblue;
-		background-color: $lightgrey;
+		color: $primary-color;
+		background-color: $background-color;
 		padding: 0 5px;
 	}
 }
@@ -188,7 +188,7 @@ article {
 
 #tocMenuButtonLabel {
 	font-size: 2em;
-	color: $orange;
+	color: $accent-color;
 	position: fixed;
 	bottom: 0;
 	right: 0;
@@ -198,14 +198,14 @@ article {
 
 #tocMenuButton:checked ~ #tocContainer {
 	display: block;
-	border: 1px solid $darkblue;
+	border: 1px solid $primary-color;
 	position: fixed;
 	top: 1em;
 	right: 1em;
 	bottom: 1em;
 	min-width: 10vw;
 	max-width: 30vw;
-	background-color: $lightgrey;
+	background-color: $background-color;
 	z-index: 1;
 	overflow-x: hidden;
 	min-height: 10vh;
@@ -213,7 +213,7 @@ article {
 
 	h1 {
 		text-shadow: 0px 2px 4px rgba(100,100,100,0.5);
-		color: $darkblue;
+		color: $primary-color;
 		font-size: 2em;
 		font-weight: bold;
 		letter-spacing: 20px;
@@ -225,7 +225,7 @@ article {
 	}
 
 	li a{
-		border-bottom: 1px dashed $lightblue;
+		border-bottom: 1px dashed $secondary-color;
 		opacity: 0.8;
 		width: 80%;
 		display: block;
@@ -233,7 +233,7 @@ article {
 
 	a {
 		text-decoration: none;
-		color: $lightblue;
+		color: $secondary-color;
 		font-size: 1em;
 		line-height: 1.5em;
 	}
@@ -254,7 +254,7 @@ article {
 .post_header::after {
 	content: "";
 	display: block;
-	border-top: 1px solid $lightblue;
+	border-top: 1px solid $secondary-color;
 	margin-left: -100vw;
 	margin-right: -100vw;
 	margin-bottom: 4em;
@@ -268,17 +268,17 @@ article {
 		position: relative;
 
 		a {
-			@include links($lightblue);
+			@include links($primary-color);
 			text-align: left;
 			padding: 0;
 		}
 
 		i {
-			color: $darkblue;
+			color: $primary-color;
 		}
 
 		h1 {
-			color: $darkblue;
+			color: $primary-color;
 			font-weight: bold;
 			font-family: Inter;
 			font-size: 2.5em;
@@ -287,13 +287,13 @@ article {
 		}
 
 		h3 {
-			color: $darkblue;
+			color: $primary-color;
 			font-weight: normal;
 			margin-top: 0.5em;
 		}
 
 		.supplements {
-			color: $darkblue;
+			color: $primary-color;
 			margin-top: 3em;
 		}
 

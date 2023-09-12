@@ -13,7 +13,7 @@
 	&::after {
 		content: "";
 		display: block;
-		border-top: 1px dashed $lightblue;
+		border-top: 1px dashed $secondary-color;
 		margin-left: -100vw;
 		margin-right: -100vw;
 		margin-bottom: 4em; //same as .single_article .summary
@@ -27,6 +27,7 @@
 		font-weight: 700;
 		letter-spacing: 2px;
 		margin: 0;
+		color: $primary-color;
 	}
 
 	a {
@@ -43,7 +44,7 @@
 	}
 
 	i {
-		color: $darkblue;
+		color: $primary-color;
 	}
 
 	.summary {
@@ -101,7 +102,7 @@
 	}
 
 	.arrow {
-	  border: solid $darkblue;
+	  border: solid $primary-color;
 	  border-width: 0 3px 3px 0;
 	  display: inline-block;
 	  padding: 3px;

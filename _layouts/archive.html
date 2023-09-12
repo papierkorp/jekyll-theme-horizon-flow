@@ -4,7 +4,7 @@ layout: default
 
 <main id="archive">
   <section>
-    <h1>Archive</h1>
+    <h1>{% if site.data.configurable_lables.archive_title %}{{site.data.configurable_lables.archive_title}}{% else %}Archive{% endif %}</h1>
 
     {% if site.posts.size > 0 %}
     <!-- show all years -->
@@ -25,7 +25,7 @@ layout: default
     <!-- Display an empty list when there are no posts -->
     <div class="archive_all_years">
       <ul>
-        <li>No archive years available.</li>
+        <li>{% if site.data.configurable_lables.archive_found %}{{site.data.configurable_lables.archive_found}}{% else %}No archive years available.{% endif %}</li>
       </ul>
     </div>
     {% endif %}
@@ -35,7 +35,7 @@ layout: default
 
     <!-- show posts for certain year -->
     <div class="archive_results">
-    Found Posts per selected Year
+    {% if site.data.configurable_lables.archive_found %}{{site.data.configurable_lables.archive_found}}{% else %}Found Posts per selected Year{% endif %}
     <br/><br/><br/><br/>
 
     {% assign postsByYear = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}

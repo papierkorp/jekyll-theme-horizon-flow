@@ -2,9 +2,8 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-theme-horizon-flow"
-  spec.version       = "0.1.0"
+  spec.version       = "0.1.1"
   spec.authors       = ["Markus Schiller"]
-  spec.email         = ["m.schiller@ymail.com"]
 
   spec.summary       = "\"Horizon-Flow\" is a minimalist Jekyll theme characterized by a serene color palette of blue, gray, and orange. It features a clean, sidebar-free layout, keeping all content in a single, flowing main container. The header remains fixed even while scrolling, ensuring easy navigation."
   spec.homepage      = "https://github.com/papierkorp/jekyll-theme-horizon-flow"

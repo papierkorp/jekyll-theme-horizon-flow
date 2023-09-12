@@ -21,7 +21,7 @@ layout: default
 <!-- Html Elements for Search -->
 <main id="search">
 	<section>
-		<h1>Search</h1>
+		<h1>{% if site.data.configurable_lables.search_title %}{{site.data.configurable_lables.search_title}}{% else %}Search{% endif %}</h1>
 		<div class="input">
 			<input type="text" id="search-input" placeholder="Search ...">
 		</div>

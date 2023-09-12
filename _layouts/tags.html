@@ -4,7 +4,7 @@ layout: default
 
 <main id="tags">
   <section>
-    <h1>Tags</h1>
+    <h1>{% if site.data.configurable_lables.tags_title %}{{site.data.configurable_lables.tags_title}}{% else %}Tags{% endif %}</h1>
 
     <!-- Capture and sort tags by count -->
     {% capture site_tags %}
@@ -36,7 +36,7 @@ layout: default
     <!-- Display an empty list when sortedTags is empty -->
     <div>
       <ul>
-        <li>No tags available.</li>
+        <li>{% if site.data.configurable_lables.tags_found %}{{site.data.configurable_lables.tags_found}}{% else %}No tags available.{% endif %}</li>
       </ul>
     </div>
     {% endif %}
@@ -44,7 +44,7 @@ layout: default
 
     <!-- Show posts for selected tag -->
     <div class="tags_results">
-      Found Posts per selected Tag
+      {% if site.data.configurable_lables.tags_found %}{{site.data.configurable_lables.tags_found}}{% else %}Found Posts per selected Tag{% endif %}
       <br /><br /><br /><br />
 
       {% for tag in site.tags %}
