@@ -60,90 +60,29 @@ This theme can offer:
 
 ## Installation
 
-If you're running Jekyll v4.3+ and self-hosting you can quickly install the theme as a Ruby gem. If you're hosting with [**GitHub Pages**](https://pages.github.com/) you can install as a [remote theme](https://github.com/benbalter/jekyll-remote-theme) or directly copy all of the theme files (see [structure](#structure) below) into your project.
+1. Follow the [Jekyll Quickstart](https://jekyllrb.com/docs/)
 
-### Ruby Gem Method
-
-1. Add this line to your Jekyll site's `Gemfile`:
+2. Add this line to your Jekyll site's `Gemfile`:
 
 ```ruby
 gem "jekyll-theme-horizon-flow"
 ```
 
-2. Add this line to your Jekyll site's `_config.yml` file:
+3. Add this line to your Jekyll site's `_config.yml` file:
 
 ```yaml
 theme: jekyll-theme-horizon-flow
 ```
 
-3. Then run [Bundler](http://bundler.io/) to install the theme gem and dependencies:
+4. Then run [Bundler](http://bundler.io/) to install the theme gem and dependencies:
 
 ```terminal
 bundle install
 ```
 
-### GitHub Pages Method
+5. Rename `index.md` to [`index.html`](index.html)
 
-GitHub Pages has added [full support](https://github.com/blog/2464-use-any-theme-with-github-pages) for any GitHub-hosted theme.
-
-1. Replace `gem "jekyll"` with:
-
-```ruby
-gem "github-pages", group: :jekyll_plugins
-```
-
-2. Run `bundle update` and verify that all gems install properly.
-
-3. Add `remote_theme: ""` to your
-   `_config.yml` file. Remove any other `theme:` or `remote_theme:` entries.
-
----
-
-**Note:** Your Jekyll site should be viewable immediately at <http://USERNAME.github.io>. If it's not, you can force a rebuild by pushing empty commits to GitHub (see below for more details).
-
-If you're hosting several Jekyll based sites under the same GitHub username you will have to use Project Pages instead of User Pages. Essentially you rename the repo to something other than **USERNAME.github.io** and create a `gh-pages` branch off of `master`. For more details on how this works, check [GitHub's documentation](https://help.github.com/articles/user-organization-and-project-pages/).
-
-
-### Structure
-
-
-**Please note:** If you installed Horizon Flow via the Ruby Gem or remote theme methods, theme files found in `/_layouts`, `/_includes`, `/_sass`, and `/assets` will be missing from your project. This is normal as they are bundled with the [`jekyll-theme-horizon-flow`](https://rubygems.org/gems/jekyll-theme-horizon-flow) gem.
-
-```
-├── _includes           # theme includes
-├── _layouts            # theme layouts (see below for usage)
-├── _sass               # Sass partials
-├── assets
-|  ├── style.scss       # main style file
-|  └── search.json      # stores your data, used for the search
-├── _config.yml         # sample configuration
-├── archive.md          # if you want to use the archive page
-├── categories.md       # if you want to use the categories page
-├── impressum.html      # sample impressum
-├── index.html          # default index.html file with pagination
-├── search.md           # if you want to use the search page
-├── tags.md             # if you want to use the tags page
-```
-
-### Starting Fresh
-
-Using the `jekyll new` command will get you up and running the quickest.
-
-Edit your `Gemfile` and `_config.yml` files following the [Installation guide](#installation) above and [Configuration guide](#configuration) below.
-
-
-After creating a `Gemfile` and installing the theme you'll need to rename `index.md` to [`index.html`](index.html)
-Also you have to add `gem "jekyll-paginate"` to your `Gemfile` plugins list:
-
-```ruby
-group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
-  gem "jekyll-paginate"
-end
-```
-
-If you want to use the full potential of this theme you should also follow along [Navigation setup](#Navigation)
-You can also configure most of the hard coded Labels if you follow this Instruction: [Configurable Lables](#configurable-lables)
+6. Follow the [Navigation setup](#Navigation) guide to make the best out of the theme.
 
 
 
@@ -275,11 +214,13 @@ As for the possible Configurations this theme offers take note of the following:
 * [Site Base URL](#site-base-url)
 * [Navigation](#navigation)
 * [Footer](#footer)
+* [Layouts](#layouts)
 * [Footer Sidebar](#footer-sidebar)
 * [Table of Contents](#table-of-contents)
 * [paginate](#paginate)
+* [Read Time](#read-time)
 * [default plugins](#default-plugins)
-
+* [Configurable Labels](#configurable-labels)
 
 ### Site URL
 
