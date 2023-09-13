@@ -54,10 +54,10 @@ layout: default
 
               <span class="archive_date">
 
-                <a href="{{ post.url }}">
+                <a href="{{ site.baseurl }}/{{ post.url }}">
                   <i class="archive_day">{{ post.date | date: "%d" }}</i>
                 </a>
-                <a href="{{ post.url }}">
+                <a href="{{ site.baseurl }}/{{ post.url }}">
                   <span>{{ post.date | date: "%b/%Y" }}</span>
                 </a>
 
@@ -65,7 +65,7 @@ layout: default
 
               <span class="archive_summary">
                 <h3>
-                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                  <a href="{{ site.baseurl }}/{{ post.url | relative_url }}">{{ post.title }}</a>
                 </h3>
                 {{ post.content | markdownify | strip_html | truncatewords: 50 }}
               </span>
