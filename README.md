@@ -7,6 +7,13 @@
   - [Site URL](#site-url)
   - [Site Base URL](#site-base-url)
   - [Navigation](#navigation)
+- [```html](#html)
+- [```markdown](#markdown)
+- [```markdown](#markdown-1)
+- [```markdown](#markdown-2)
+- [```markdown](#markdown-3)
+- [```html](#html-1)
+- [```markdown](#markdown-4)
   - [Footer](#footer)
   - [Layouts](#layouts)
   - [Footer Sidebar](#footer-sidebar)
@@ -610,8 +617,10 @@ There is no front matter for it.
 
 # whislist
 
+- make everything mobile friendly
 - footer
   + make the columns in the footer-sidebar (tags, categories, recent posts) configurable
+  + fix the zoom problem in the footer-sidebar
   + fix for mobile screens
 - post
   + fix TOC for mobile screens
