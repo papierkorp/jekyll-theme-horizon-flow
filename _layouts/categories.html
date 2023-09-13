@@ -57,10 +57,10 @@ layout: default
             <div class="categories_findresult">
               <span class="categories_date">
 
-                <a href="{{ post.url }}">
+                <a href="{{ post.url }}/{{ site.baseurl }}">
                   <i class="categories_day">{{ post.date | date: "%d" }}</i>
                 </a>
-                <a href="{{ post.url }}">
+                <a href="{{ post.url }}/{{ site.baseurl }}">
                   <span>{{ post.date | date: "%b/%Y" }}</span>
                 </a>
 
@@ -68,7 +68,7 @@ layout: default
 
               <span class="categories_summary">
                 <h3>
-                  <a href="{{ post.url }}">{{ post.title }}</a>
+                  <a href="{{ post.url }}/{{ site.baseurl }}">{{ post.title }}</a>
                 </h3>
                 {{ post.content | markdownify | strip_html | truncatewords: 50 }}
               </span>

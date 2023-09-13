@@ -110,7 +110,7 @@ test ob ich liquid in markdown verwenden kann
 paginator.posts:
 
 {% for post in paginator.posts %}
-<a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+<a href="{{ post.url }}/{{ site.baseurl }}"><h3>{{ post.title }}</h3></a>
 {% endfor %}
 
 site.description:
