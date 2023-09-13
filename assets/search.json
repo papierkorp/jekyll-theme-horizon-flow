@@ -6,8 +6,8 @@
     {% if post.searchable != false %}
     {
       "title"    : "{{ post.title | escape }}",
-      "summary"  : "{{ post.content | markdownify | strip_html | truncatewords: 50 }}",
-      "url"      : "{{ site.baseurl }}{{ post.url }}",
+      "summary"  : {{ post.content | strip_html | truncatewords: 50 | jsonify }},
+      "url"      : "{{site.url}}{{ site.baseurl }}{{ post.url }}",
       "category" : "{{ post.categories | join: ', ' }}",
       "tags"     : "{{ post.tags | join: ', ' }}",
       "keywords" : "{{ post.search_keywords }}",

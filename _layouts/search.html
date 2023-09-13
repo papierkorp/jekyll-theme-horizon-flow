@@ -13,11 +13,6 @@ layout: default
 </script>
 
 
-
-<!-- <div class="search_results">
-	<div class="single_result"><div class="search_findresults"><span class="search_date"><a href="{url}"><i class="search_day">{date_day}</i></a><a href="{url}">{date_my}</a></span><span class="search_summary"><h3><a href="{url}">{title}</a></h3>{summary}</span></div></div>
-</div> -->
-
 <!-- Html Elements for Search -->
 <main id="search">
 	<section>
@@ -32,14 +27,13 @@ layout: default
 	</section>
 </main>
 
-<!-- Script pointing to search-script.js -->
-<!-- <script src="/path/to/search-script.js" type="text/javascript"></script> -->
 
 <!-- Configuration -->
 <script>
 SimpleJekyllSearch({
   searchInput: document.getElementById('search-input'),
   resultsContainer: document.getElementById('results-container'),
-  json: '{{ site.url }}{{ site.baseurl }}/assets/search.json'
+  json: '{{ post.url }}{{ site.baseurl }}/assets/search.json'
 })
+console.log("test")
 </script>

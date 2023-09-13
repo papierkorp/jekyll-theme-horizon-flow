@@ -5,6 +5,9 @@ date: 2021-01-01
 tags: markdown test
 subtitle: "copied from https://github.com/fullpipe/markdown-test-page/tree/master"
 ---
+# **bold title**
+
+Special Character Test: % | { } \ " ' , :
 
 # <a name="top"></a>Markdown Test Page
 

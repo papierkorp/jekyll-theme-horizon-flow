@@ -65,7 +65,7 @@ layout: default
 
               <span class="archive_summary">
                 <h3>
-                  <a href="{{ site.baseurl }}{{ post.url | relative_url }}">{{ post.title }}</a>
+                  <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
                 </h3>
                 {{ post.content | markdownify | strip_html | truncatewords: 50 }}
               </span>
