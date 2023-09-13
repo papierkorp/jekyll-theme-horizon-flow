@@ -41,7 +41,7 @@
             {% assign categories_to_display = unique_categories | slice: 0, categories_count %}
             
             {% for category in categories_to_display %}
-              <li><a href="categories.html#{{ category }}">{{ category }}</a></li>
+              <li><a href="{{ site.baseurl }}/categories.html#{{ category }}">{{ category }}</a></li>
             {% endfor %}
           </ul>
         </section>
@@ -62,7 +62,7 @@
             {% assign tags_to_display = unique_tags | slice: 0, tags_count %}
             
             {% for tag in tags_to_display %}
-              <li><a href="{{ site.baseurl }}tags#{{ tag }}">{{ tag }}</a></li>
+              <li><a href="{{ site.baseurl }}/tags#{{ tag }}">{{ tag }}</a></li>
             {% endfor %}
           </ul>
         </section>
