@@ -59,7 +59,14 @@ plugins:
 navigation:
   - title: Home
     url: /index.html
-
+  - title: Categories
+    url: /categories.html
+  - title: Tags
+    url: /tags.html
+  - title: Archive
+    url: /archive.html
+  - title: Search
+    url: /search.html
 
 footer_sidebar:
   arrangement:
@@ -86,7 +93,23 @@ footer_links:
   - title: Feed
     url: /feed.xml
     icon: fa fa-rss
-
+  - title: GitHub
+    url: https://github.com/papierkorp
+    icon: fa fa-github
+  - title: Email
+    url: mailto:xxx@test.de
+    icon: fa fa-envelope
+  - title: Twitter
+    url: https://twitter.com
+    icon: fa fa-twitter
+  - title: Facebook
+    url: https://facebook.com
+    icon: fa fa-facebook
+  - title: Instagram
+    url: https://instagram.com
+    icon: fa fa-instagram
+  - title: Impressum
+    url: /impressum.html
 
 defaults:
   -
