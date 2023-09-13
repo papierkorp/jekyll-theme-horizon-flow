@@ -54,17 +54,17 @@ layout: default
           {% for post in tag[1] %}
             <div class="tags_findresult">
               <span class="tags_date">
-                <a href="{{ site.baseurl }}/{{ post.url }}">
+                <a href="{{ site.baseurl }}{{ post.url }}">
                   <i class="tags_day">{{ post.date | date: "%d" }}</i>
                 </a>
-                <a href="{{ site.baseurl }}/{{ post.url }}">
+                <a href="{{ site.baseurl }}{{ post.url }}">
                   <span>{{ post.date | date: "%b/%Y" }}</span>
                 </a>
               </span>
 
               <span class="tags_summary">
                 <h3>
-                  <a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a>
+                  <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
                 </h3>
                 {{ post.content | markdownify | strip_html | truncatewords: 50 }}
               </span>

@@ -36,7 +36,7 @@ layout: default
 			      <span class="supplements-category">
 			        <i class="fa fa-bars"></i>
 			        {% for category in page.categories %}
-			          <a href="{{ site.baseurl }}/categories#{{ category | slugify }}">{{ category }}</a>{% if forloop.last == false %},{% endif %}
+			          <a href="{{ site.baseurl }}categories#{{ category | slugify }}">{{ category }}</a>{% if forloop.last == false %},{% endif %}
 			        {% endfor %}
 			      </span>
 			    {% endif %}
@@ -45,7 +45,7 @@ layout: default
 			      <span>
 			        <i class="fa fa-tags"></i>
 			        {% for tag in page.tags %}
-			          <a href="{{ site.baseurl }}/tags#{{ tag | slugify }}">{{ tag }}</a>{% if forloop.last == false %},{% endif %}
+			          <a href="{{ site.baseurl }}tags#{{ tag | slugify }}">{{ tag }}</a>{% if forloop.last == false %},{% endif %}
 			        {% endfor %}
 			      </span>
 			    {% endif %}

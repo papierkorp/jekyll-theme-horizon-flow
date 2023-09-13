@@ -62,7 +62,7 @@
             {% assign tags_to_display = unique_tags | slice: 0, tags_count %}
             
             {% for tag in tags_to_display %}
-              <li><a href="{{ site.baseurl }}/tags#{{ tag }}">{{ tag }}</a></li>
+              <li><a href="{{ site.baseurl }}tags#{{ tag }}">{{ tag }}</a></li>
             {% endfor %}
           </ul>
         </section>
@@ -73,7 +73,7 @@
             {% assign recentposts_count = site.footer_sidebar.recentposts.count | default: 10 %}
             {% assign recent_posts = site.posts | reverse | limit: recentposts_count %}
             {% for post in recent_posts %}
-              <li><a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a></li>
+              <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
             {% endfor %}
           </ul>
         </section>

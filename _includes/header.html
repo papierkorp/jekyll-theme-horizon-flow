@@ -11,7 +11,7 @@
 			  {% if page.url contains item.url %} <!--or (page.url == '/' and item.url == '/index.html')-->
 			      {% assign class = 'navi_current' %}
 			  {% endif %}
-			  <li><a href="{{ site.baseurl }}/{{ item.url }}" class="{{ class }}">
+			  <li><a href="{{ site.baseurl }}{{ item.url }}" class="{{ class }}">
 			      {{ item.title }}
 			  </a></li>
 			{% endfor %}
