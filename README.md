@@ -1,4 +1,4 @@
-# Horizon Flow Jekyll Theme
+# [Horizon Flow Jekyll Theme](https://papierkorp.github.io/jekyll-theme-horizon-flow/)
 
 <!-- MarkdownTOC -->
 
@@ -48,15 +48,12 @@ This theme can offer:
 * Carefully designed posts for almost all Markup elements
 * Activateable TOC and to the TOP Buttons for each post
 
-![Horizon Flow Screenshots](screenshot.png)
-![Horizon Flow Screenshots](post.png)
-![Horizon Flow Screenshots](post_toc.png)
-![Horizon Flow Screenshots](categories.png)
-![Horizon Flow Screenshots](tags.png)
-![Horizon Flow Screenshots](archive.png)
-
-![Horizon Flow Screenshots](search.png)
-
+![Horizon Flow Screenshots](https://papierkorp.github.io/jekyll-theme-horizon-flow/screenshot.png)
+![Horizon Flow Screenshots](https://papierkorp.github.io/jekyll-theme-horizon-flow/post.png)
+![Horizon Flow Screenshots](https://papierkorp.github.io/jekyll-theme-horizon-flow/post_toc.png)
+![Horizon Flow Screenshots](https://papierkorp.github.io/jekyll-theme-horizon-flow/categories.png)
+![Horizon Flow Screenshots](https://papierkorp.github.io/jekyll-theme-horizon-flow/tags.png)
+![Horizon Flow Screenshots](https://papierkorp.github.io/jekyll-theme-horizon-flow/archive.png)
 
 
 ## Installation
