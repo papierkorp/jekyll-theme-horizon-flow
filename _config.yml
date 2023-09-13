@@ -59,6 +59,14 @@ plugins:
 navigation:
   - title: Home
     url: /index.html
+  - title: Categories
+    url: /categories.html
+  - title: Tags
+    url: /tags.html
+  - title: Archive
+    url: /archive.html
+  - title: Search
+    url: /search.html
 
 footer_sidebar:
   arrangement:

@@ -1,14 +1,19 @@
 # Horizon Flow Jekyll Theme
 
+<!-- MarkdownTOC -->
+
 - [Installation](#installation)
-  - [Ruby Gem Method](#ruby-gem-method)
-  - [GitHub Pages Method](#github-pages-method)
-  - [Structure](#structure)
-  - [Starting Fresh](#starting-fresh)
 - [Configuration](#configuration)
   - [Site URL](#site-url)
   - [Site Base URL](#site-base-url)
   - [Navigation](#navigation)
+- [```html](#html)
+- [```markdown](#markdown)
+- [```markdown](#markdown-1)
+- [```markdown](#markdown-2)
+- [```markdown](#markdown-3)
+- [```html](#html-1)
+- [```markdown](#markdown-4)
   - [Footer](#footer)
   - [Layouts](#layouts)
   - [Footer Sidebar](#footer-sidebar)
@@ -27,6 +32,9 @@
   - [`layout: search`](#layout-search)
   - [`layout: tags`](#layout-tags)
 - [whislist](#whislist)
+
+<!-- /MarkdownTOC -->
+
 
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat-square)](https://raw.githubusercontent.com/papierkorp/jekyll-theme-horizon-flow/main/LICENSE.txt)
@@ -68,10 +76,11 @@ This theme can offer:
 gem "jekyll-theme-horizon-flow"
 ```
 
-3. Add this line to your Jekyll site's `_config.yml` file:
+3. Add one of those lines to your Jekyll site's `_config.yml` file:
 
 ```yaml
 theme: jekyll-theme-horizon-flow
+#remote_theme: papierkorp/jekyll-theme-horizon-flow #if you host on github pages
 ```
 
 4. Then run [Bundler](http://bundler.io/) to install the theme gem and dependencies:
