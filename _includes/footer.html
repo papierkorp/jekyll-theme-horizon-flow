@@ -62,7 +62,7 @@
             {% assign tags_to_display = unique_tags | slice: 0, tags_count %}
             
             {% for tag in tags_to_display %}
-              <li><a href="/tags#{{ tag }}">{{ tag }}</a></li>
+              <li><a href="{{ site.baseurl }}/tags#{{ tag }}">{{ tag }}</a></li>
             {% endfor %}
           </ul>
         </section>
