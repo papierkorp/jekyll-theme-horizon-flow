@@ -48,3 +48,9 @@ nav li a {
 	margin: 0;
 	padding: 0;
 }
+
+@media (width >= $small) and (max-width: $large) {
+	header {
+		font-size: 1em;
+	}
+}

@@ -67,6 +67,11 @@
 .pagination {
 	display: flex;
 	justify-content: space-between;
+	color: $primary-color;
+
+	a {
+		color: $primary-color;
+	}
 
 
 	.page_count {
@@ -74,21 +79,14 @@
 	}
 
 	.spannext {
-		padding-right: 15px;
-		padding-left: 12px;
-		border: 1px solid black;
-		padding-top: 0;
-		padding-bottom: 5px;
+		padding: 5px 15px;
+		border: 1px solid $primary-color;
 		height: 1em;
-		position: relative;
 	}
 
 	.spanprevious {
-		padding-right: 12px;
-		padding-left: 15px;
-		border: 1px solid black;
-		padding-top: 0;
-		padding-bottom: 5px;
+		padding: 5px 15px;
+		border: 1px solid $primary-color;
 		height: 1em;
 	}
 
@@ -98,22 +96,5 @@
 
 	.previous {
 		float: left;
-	}
-
-	.arrow {
-	  border: solid $primary-color;
-	  border-width: 0 3px 3px 0;
-	  display: inline-block;
-	  padding: 3px;
-	}
-
-	.right {
-	  transform: rotate(-45deg);
-	  -webkit-transform: rotate(-45deg);
-	}
-
-	.left {
-	  transform: rotate(135deg);
-	  -webkit-transform: rotate(135deg);
 	}
 }

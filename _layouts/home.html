@@ -48,11 +48,11 @@ layout: default
 		<!-- Pagination links -->
 		<div class="pagination">
 			{% if paginator.previous_page %}
-				<a class="previous" href="{{ site.baseurl}}{{ paginator.previous_page_path }}"><span class="spanprevious"><i class="arrow left" title="previous page"></i></span></a>
+				<a class="previous" href="{{ site.baseurl}}{{ paginator.previous_page_path }}"><span class="spanprevious"><i class="fa fa-arrow-left" title="previous page"></i></span></a>
 			{% endif %}
 				<p class="page_count">{{ paginator.page }} / {{ paginator.total_pages }}</p>
 			{% if paginator.next_page %}
-				<a class="next" href="{{ site.baseurl}}{{ paginator.next_page_path }}"><span class="spannext"><i class="arrow right" title="next page"></i></span></a>
+				<a class="next" href="{{ site.baseurl}}{{ paginator.next_page_path }}"><span class="spannext"><i class="fa fa-arrow-right" title="next page"></i></span></a>
 			{% endif %}
 		</div>
 	</section>

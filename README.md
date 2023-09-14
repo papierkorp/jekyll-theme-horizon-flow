@@ -424,24 +424,33 @@ footer_sidebar:
   - recentposts  # will be displayed last
   description:
     enabled: true  # default: true
+    coluns: 2  # default: 2 - if you include a list
   categories:
     enabled: true  # default: false
     count: 100  # default: 100
+    columns: 5  # default: 5
   tags:
     enabled: true  # default: false
     count: 100  # default: 100
+    columns: 5  # default: 5
   recentposts:
     enabled: true  # default: true
     count: 10  # default: 10
+    columsn: 2  # default: 2
   custom_content:
     enabled: true
     data: >-
       <h3>EXTRACONTENT</h3>
       <p>not really content though...</p>
+    columns: 2  # default: 2 - if you include a list
   custom_content2:
     enabled: false
     data: "<h3>mhm</h3>"
+    columns: 2  # default: 2 - if you include a list
 ```
+
+
+
 
 ### Table of Contents
 
@@ -617,11 +626,4 @@ There is no front matter for it.
 
 # whislist
 
-- make everything mobile friendly
-- footer
-  + make the columns in the footer-sidebar (tags, categories, recent posts) configurable
-  + fix the zoom problem in the footer-sidebar
-  + fix for mobile screens
-- post
-  + fix TOC for mobile screens
 - more colors

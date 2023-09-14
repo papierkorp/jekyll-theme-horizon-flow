@@ -105,57 +105,66 @@ footer aside section:first-child {
   padding: 0;
 }
 
-.footer_categories, .footer_tags {
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    columns: 5;
-  }
-
-  a {
-    text-decoration: none;
-    color: $background-color;
-    letter-spacing: -1px;
-    width: 100%;
-    cursor: pointer;
-  }
+.footer_sitedescription1, 
+.footer_customcontent1, 
+.footer_customcontent21, 
+.footer_recentposts1, 
+.footer_categories1, 
+.footer_tags1 {
+  @include footer_elements(1);
 }
 
-.footer_categories1, .footer_tags1, .footer_tags, .footer_recentposts1  {
-
+.footer_sitedescription2, 
+.footer_customcontent2, 
+.footer_customcontent22, 
+.footer_recentposts2, 
+.footer_categories2, 
+.footer_tags2 {
+  @include footer_elements(2);
 }
 
-.footer_recentposts {
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    columns: 2;
-  }
-
-  a {
-    text-decoration: none;
-    color: $background-color;
-    letter-spacing: -1px;
-    width: 100%;
-    cursor: pointer;
-  }
+.footer_sitedescription3, 
+.footer_customcontent3, 
+.footer_customcontent23, 
+.footer_recentposts3, 
+.footer_categories3, 
+.footer_tags3 {
+  @include footer_elements(3);
 }
 
-.footer_sitedescription, .footer_extracontent, .footer_extracontent2 {
-    a {
-    text-decoration: none;
-    color: $background-color;
-    letter-spacing: -1px;
-    width: 100%;
-    cursor: pointer;
-  }
+.footer_sitedescription4, 
+.footer_customcontent4, 
+.footer_customcontent24, 
+.footer_recentposts4, 
+.footer_categories4, 
+.footer_tags4 {
+  @include footer_elements(4);
 }
+
+.footer_sitedescription5, 
+.footer_customcontent5, 
+.footer_customcontent25, 
+.footer_recentposts5, 
+.footer_categories5, 
+.footer_tags5 {
+  @include footer_elements(5);
+}
+
+
 
 @media (width >= $small) and (max-width: $large) {
   footer aside  {
     flex-direction: column;
+  }
+
+  footer li {
+      width: 100%;
+    }
+
+  .footer_sitedescription, .footer_customcontent, .footer_customcontent2, .footer_recentposts, .footer_categories, .footer_tags {
+    ul li {
+      width: 100%;
+    }
   }
 
   footer aside section:first-child:nth-last-child(1),

@@ -26,6 +26,7 @@
 		margin-top: 3em;
 		background-color: $background-color;
 		margin-left: calc(-1em + 5px);; // 14px*2 padding - 5px border
+		overflow-wrap: break-word;
 	}
 
 
@@ -167,7 +168,6 @@
 /* ---------------------------------------------------- */
 /* ---------------------------------------------------- */
 
-
 article {
 	position: relative;
 }
@@ -192,7 +192,7 @@ article {
 	position: fixed;
 	bottom: 0;
 	right: 0;
-	padding: 16px;
+	padding: 1rem; /* Adjust padding as needed */
 	z-index: 1;
 }
 
@@ -200,11 +200,10 @@ article {
 	display: block;
 	border: 1px solid $primary-color;
 	position: fixed;
-	top: 1em;
-	right: 1em;
-	bottom: 1em;
+	top: 3vw; /* Adjust top, right, bottom, and left as needed */
+	right: 3vw;
 	min-width: 10vw;
-	max-width: 30vw;
+	max-width: 40vw;
 	background-color: $background-color;
 	z-index: 1;
 	overflow-x: hidden;
@@ -212,36 +211,69 @@ article {
 	max-height: 80vh;
 
 	h1 {
-		text-shadow: 0px 2px 4px rgba(100,100,100,0.5);
+		text-shadow: 0px 0.1em 0.2em rgba(100, 100, 100, 0.5); /* Adjust text-shadow as needed */
 		color: $primary-color;
 		font-size: 2em;
 		font-weight: bold;
-		letter-spacing: 20px;
+		letter-spacing: 1rem; /* Adjust letter-spacing as needed */
 		text-align: center;
 	}
 
 	ul {
 		list-style: none;
+		padding-left: 10px; /* Remove default list padding */
 	}
 
-	li a{
+	li a {
 		border-bottom: 1px dashed $secondary-color;
 		opacity: 0.8;
 		width: 80%;
 		display: block;
+		margin: 1rem auto; /* Adjust margin as needed */
 	}
 
 	a {
 		text-decoration: none;
 		color: $secondary-color;
 		font-size: 1em;
-		line-height: 1.5em;
+		line-height: 1.5;
 	}
 
 	a:hover {
 		@include hover();
 	}
 }
+
+
+@media screen and (max-width: $large) {
+  #tocMenuButtonLabel {
+    font-size: 1.5em;
+    padding: 0.5rem;
+  }
+
+  #tocMenuButton:checked ~ #tocContainer {
+    min-width: 80vw; 
+    max-width: 80vw;
+    top: 10vw;
+    left: 10vw;
+
+    h1 {
+      font-size: 1.5em;
+      letter-spacing: 0.5rem;
+    }
+
+    ul {
+      margin: 0;
+    }
+
+    li a {
+      margin: 0.5rem auto;
+    }
+  }
+}
+
+
+
 
 
 /* ---------------------------------------------------- */
@@ -300,6 +332,7 @@ article {
 		.supplements a {
 			/* Set links to display as block-level elements so capitalize works*/
 			display: inline-block;
+			word-break: break-all;
 			&:hover {
 				@include hover();
 			}

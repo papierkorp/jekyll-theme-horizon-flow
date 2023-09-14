@@ -17,6 +17,7 @@ body {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  word-break: break-word;
 }
 
 header {
@@ -46,8 +47,13 @@ footer {
 }
 
 
-@media (width >= $small) and (max-width: $large) {
-    body {
+// @media (width >= $small) and (max-width: $large) 
+@media screen and (max-width: $large) {
+  body {
       font-size: 2em;
+  }
+
+  main {
+    margin-top: 8rem;
   }
 }
