@@ -13,10 +13,6 @@
 /* ---------------------------------------------------- */
 
 
-.categories_all {
-	@include showlinks(3);
-}
-
 .categories_all1 {
 	@include showlinks(1);
 }
@@ -37,6 +33,11 @@
 	@include showlinks(5);
 }
 
+@media screen and (max-width: $large) {
+	.categories_all {
+		@include showlinks(1);
+	}
+}
 
 /* ---------------------------------------------------- */
 /* ---------------------------------------------------- */

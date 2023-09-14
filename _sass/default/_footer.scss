@@ -153,6 +153,18 @@ footer aside section:first-child {
 
 
 @media (width >= $small) and (max-width: $large) {
+  footer {
+    font-size: 1.5em;
+  }
+
+  footer .social-icons {
+    flex-wrap: wrap; /* Allow the icons to wrap to the next line */
+  }
+
+  footer .social-icons > * {
+    margin: 0.5em 0.5em; /* Adjust the margin as needed */
+  }
+
   footer aside  {
     flex-direction: column;
   }

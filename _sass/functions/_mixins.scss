@@ -73,7 +73,10 @@
 
     @media screen and (max-width: $large) {
         font-size: 1em;
+        flex-wrap: wrap;
     }
+
+
 }
 
 @mixin findresults_day() {
@@ -97,6 +100,14 @@
     // gap: -5px;
     margin: auto;
     min-width: 6em;
+
+    @media screen and (max-width: $large) {
+        border: 1px solid black;
+        background-color: $secondary-color;
+        border-radius: 500px;
+        padding: 1em;
+    }
+
 }
 
 @mixin findresults_summary() {
@@ -105,6 +116,12 @@
 
     a:hover {
         @include hover();
+    }
+
+    @media screen and (max-width: $large) {
+        margin-top: 1em;
+        padding-bottom: 3em;
+        border-bottom: 1px dotted $primary-color;
     }
 }
 

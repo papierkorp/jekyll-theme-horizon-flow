@@ -17,7 +17,7 @@ layout: default
 
     {% if sortedCategories.size > 0 %}
     <!-- Show all categories sorted by count -->
-    <div class="categories_all{% if site.footer_sidebar.categories.columns and site.footer_sidebar.categories.columns >= 1 and site.footer_sidebar.categories.columns <= 5 %}{{site.footer_sidebar.categories.columns}}{% else %}3{% endif %}">
+    <div class="categories_all categories_all{% if site.footer_sidebar.categories.columns and site.footer_sidebar.categories.columns >= 1 and site.footer_sidebar.categories.columns <= 5 %}{{site.footer_sidebar.categories.columns}}{% else %}3{% endif %}">
       <ul>
         {% for category in sortedCategories %}
           {% assign categoryParts = category | split: '&#x1F;' %}
@@ -55,16 +55,10 @@ layout: default
 
           {% for post in category[1] %}
             <div class="categories_findresult">
-              <span class="categories_date">
-
-                <a href="{{ site.baseurl }}{{ post.url }}">
-                  <i class="categories_day">{{ post.date | date: "%d" }}</i>
-                </a>
-                <a href="{{ site.baseurl }}{{ post.url }}">
-                  <span>{{ post.date | date: "%b/%Y" }}</span>
-                </a>
-
-              </span>
+              <a href="{{ site.baseurl }}{{ post.url }}" class="categories_date">
+                <i class="categories_day">{{ post.date | date: "%d" }}</i>
+                <span>{{ post.date | date: "%b/%Y" }}</span>
+              </a>
 
               <span class="categories_summary">
                 <h3>

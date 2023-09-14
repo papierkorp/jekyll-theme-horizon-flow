@@ -17,7 +17,7 @@ layout: default
 
     {% if sortedTags.size > 0 %}
     <!-- Show all tags sorted by count -->
-    <div class="tags_all{% if site.layouts.tags.columns and site.layouts.tags.columns >= 1 and site.layouts.tags.columns <= 5 %}{{site.layouts.tags.columns}}{% else %}4{% endif %}">
+    <div class="tags_all tags_all{% if site.layouts.tags.columns and site.layouts.tags.columns >= 1 and site.layouts.tags.columns <= 5 %}{{site.layouts.tags.columns}}{% else %}4{% endif %}">
       <ul>
         {% for tag in sortedTags %}
           {% assign tagParts = tag | split: '&#x1F;' %}
@@ -53,14 +53,11 @@ layout: default
 
           {% for post in tag[1] %}
             <div class="tags_findresult">
-              <span class="tags_date">
-                <a href="{{ site.baseurl }}{{ post.url }}">
-                  <i class="tags_day">{{ post.date | date: "%d" }}</i>
-                </a>
-                <a href="{{ site.baseurl }}{{ post.url }}">
-                  <span>{{ post.date | date: "%b/%Y" }}</span>
-                </a>
-              </span>
+
+              <a href="{{ site.baseurl }}{{ post.url }}" class="tags_date">
+                <i class="tags_day">{{ post.date | date: "%d" }}</i>
+                <span>{{ post.date | date: "%b/%Y" }}</span>
+              </a>
 
               <span class="tags_summary">
                 <h3>

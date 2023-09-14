@@ -13,10 +13,6 @@
 /* ---------------------------------------------------- */
 
 
-.archive_all_years {
-	@include showlinks(2);
-}
-
 .archive_all_years1 {
 	@include showlinks(1);
 }
@@ -33,8 +29,10 @@
 	@include showlinks(4);
 }
 
-.archive_all_years5 {
-	@include showlinks(5);
+@media screen and (max-width: $large) {
+.archive_all_years {
+	@include showlinks(1);
+	}
 }
 
 /* ---------------------------------------------------- */

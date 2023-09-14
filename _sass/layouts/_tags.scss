@@ -37,6 +37,11 @@
     @include showlinks(5);
 }
 
+@media screen and (max-width: $large) {
+.tags_all {
+    @include showlinks(1);
+}
+}
 
 
 /* ---------------------------------------------------- */

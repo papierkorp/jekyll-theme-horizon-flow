@@ -8,7 +8,7 @@ layout: default
 
     {% if site.posts.size > 0 %}
     <!-- show all years -->
-    <div class="archive_all_years{% if site.layouts.archive.columns and site.layouts.archive.columns >= 1 and site.layouts.archive.columns <= 5 %}{{site.layouts.archive.columns}}{% else %}2{% endif %}">
+    <div class="archive_all_years archive_all_years{% if site.layouts.archive.columns and site.layouts.archive.columns >= 1 and site.layouts.archive.columns <= 5 %}{{site.layouts.archive.columns}}{% else %}2{% endif %}">
       <ul>
         {% assign postsByYear = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}
         {% for year in postsByYear %}
@@ -52,16 +52,12 @@ layout: default
 
             <div class="archive_findresults">
 
-              <span class="archive_date">
+             
 
-                <a href="{{ site.baseurl }}{{ post.url }}">
-                  <i class="archive_day">{{ post.date | date: "%d" }}</i>
-                </a>
-                <a href="{{ site.baseurl }}{{ post.url }}">
-                  <span>{{ post.date | date: "%b/%Y" }}</span>
-                </a>
-
-              </span>
+              <a class="archive_date" href="{{ site.baseurl }}{{ post.url }}">
+                <i class="archive_day">{{ post.date | date: "%d" }}</i>
+                <span>{{ post.date | date: "%b/%Y" }}</span>
+              </a>
 
               <span class="archive_summary">
                 <h3>
