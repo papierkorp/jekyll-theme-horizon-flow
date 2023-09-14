@@ -1,10 +1,3 @@
-footer {
-  width: 100%;
-  color: $background-color;
-  font-size: 0.8em;
-  margin-top: auto;
-}
-
 footer ul {
   list-style-type: none;
   margin: 0;
@@ -52,6 +45,7 @@ footer .social-icons .divider::before {
   content: "|";
   font-size: 0.8em;
 }
+
 
 /* ---------------------------------------------------- */
 /* ---------------------------------------------------- */
@@ -111,8 +105,6 @@ footer aside section:first-child {
   padding: 0;
 }
 
-
-
 .footer_categories, .footer_tags {
   ul {
     list-style: none;
@@ -151,12 +143,33 @@ footer aside section:first-child {
   }
 }
 
-.footer_sitedescription, .footer_extracontent {
+.footer_sitedescription, .footer_extracontent, .footer_extracontent2 {
     a {
     text-decoration: none;
     color: $background-color;
     letter-spacing: -1px;
     width: 100%;
     cursor: pointer;
+  }
+}
+
+@media (width >= $small) and (max-width: $large) {
+  footer aside  {
+    flex-direction: column;
+  }
+
+  footer aside section:first-child:nth-last-child(1),
+  footer aside section:first-child:nth-last-child(2),
+  footer aside section:first-child:nth-last-child(2) ~ section,
+  footer aside section:first-child:nth-last-child(3),
+  footer aside section:first-child:nth-last-child(3) ~ section,
+  footer aside section:first-child:nth-last-child(4),
+  footer aside section:first-child:nth-last-child(4) ~ section,
+  footer aside section:first-child:nth-last-child(5),
+  footer aside section:first-child:nth-last-child(5) ~ section,
+  footer aside section:first-child {
+    padding: 0 0 0 1em;
+    flex-grow: 1;
+    max-width: 100%;
   }
 }
