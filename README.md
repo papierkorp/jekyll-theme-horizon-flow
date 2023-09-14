@@ -1,7 +1,5 @@
 # [Horizon Flow Jekyll Theme](https://papierkorp.github.io/jekyll-theme-horizon-flow/)
 
-<!-- MarkdownTOC -->
-
 - [Installation](#installation)
 - [Configuration](#configuration)
   - [Site URL](#site-url)
@@ -26,8 +24,6 @@
   - [`layout: tags`](#layout-tags)
 - [whislist](#whislist)
 
-<!-- /MarkdownTOC -->
-
 
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat-square)](https://raw.githubusercontent.com/papierkorp/jekyll-theme-horizon-flow/main/LICENSE.txt)
@@ -47,13 +43,10 @@ This theme can offer:
 * offers an archive
 * Carefully designed posts for almost all Markup elements
 * Activateable TOC and to the TOP Buttons for each post
+* Mobile Friendly
+* Highly Customizable
 
 ![Horizon Flow Screenshots](https://papierkorp.github.io/jekyll-theme-horizon-flow/screenshot.png)
-![Horizon Flow Screenshots](https://papierkorp.github.io/jekyll-theme-horizon-flow/post.png)
-![Horizon Flow Screenshots](https://papierkorp.github.io/jekyll-theme-horizon-flow/post_toc.png)
-![Horizon Flow Screenshots](https://papierkorp.github.io/jekyll-theme-horizon-flow/categories.png)
-![Horizon Flow Screenshots](https://papierkorp.github.io/jekyll-theme-horizon-flow/tags.png)
-![Horizon Flow Screenshots](https://papierkorp.github.io/jekyll-theme-horizon-flow/archive.png)
 
 
 ## Installation

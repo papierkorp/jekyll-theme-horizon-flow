@@ -4,10 +4,6 @@ footer ul {
   padding: 0;
 }
 
-footer ul li {
-  padding-bottom: 0.2em;
-}
-
 footer a {
   @include links($background-color);
   padding: 0;

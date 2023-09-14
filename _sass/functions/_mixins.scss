@@ -222,7 +222,7 @@
         display: flex;
         flex-wrap: wrap;
         row-gap: 0;
-        column-gap: 1rem;
+        column-gap: 0;
 
         // Each item takes half of the container width minus the gap
         @if $rows == 1 {
@@ -250,8 +250,7 @@
         li {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px dotted $secondary-color;
+            align-items: left;
             cursor: pointer;
             overflow-wrap: break-word;
 
@@ -265,6 +264,7 @@
                 justify-content: space-between;
                 padding: 0.5em;
                 text-align: left;
+                border: 1px solid rgba(0, 0, 0, 0.1);
 
                 &:hover {
                     @include hover();

@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Supercalifragilisticexpialidocious: A Comprehensive Guide to the Longest Word in the English Language Supercalifragilisticexpialidocious: A Comprehensive Guide to the Longest Word in the English Language Supercalifragilisticexpialidocious: A Comprehensive Guide to the Longest Word in the English Language"
+title: "Supercalifragilisticexpialidocious: A Comprehensive Guide to the Longest Word in the English Language"
 date: 2022-12-12
-tags: champion test longasstagtoseeifitbreaksupanylayoutoranythingelse
+tags: champion test
 subtitle: "testing can be fun"
 code_lines: false
-categories: rest2 longasscategorietoseeifitbreaksupanylayoutoranythingelse
+categories: rest2
 ---
 
 # Markdown Test Post
