@@ -108,11 +108,11 @@
         content: "";
         display: block;
         border-top: 1px solid $secondary-color;
-        margin-left: -100vw;
-        margin-right: -100vw;
-        margin-bottom: 4em;
-        margin-top: 4em;
-        width: 200vw; //only working with overflow-x: hidden; in body in _base.scss
+        width: 98vw;
+        height: 0px;
+        margin: 4em 0;
+        position: relative;
+        left: -20%;
     }
 
     ul {
