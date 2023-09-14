@@ -27,8 +27,8 @@
 
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat-square)](https://raw.githubusercontent.com/papierkorp/jekyll-theme-horizon-flow/main/LICENSE.txt)
-[![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.6-blue.svg?style=flat-square)](https://jekyllrb.com/)
-[![Ruby gem](https://img.shields.io/gem/v/jekyll-theme-so-simple.svg?style=flat-square)](https://rubygems.org/gems/jekyll-theme-horizon-flow)
+[![Jekyll]([https://img.shields.io/badge/jekyll-%3E%3D%203.6-blue.svg?style=flat-square](https://img.shields.io/badge/jekyll-%3E%3D%201.0.2-blue.svg?style=flat-square))](https://jekyllrb.com/)
+[![Ruby gem]([https://img.shields.io/gem/v/jekyll-theme-so-simple.svg?style=flat-square](https://badge.fury.io/rb/jekyll-theme-horizon-flow.svg))](https://rubygems.org/gems/jekyll-theme-horizon-flow)
 
 This is my first ever theme or anything like this so I got a whole damn LOT of Inspiration and Ideas of the [So Simple](https://github.com/mmistakes/so-simple-theme/tree/master) theme from [mmistakes](https://github.com/mmistakes). Also i almost completly copied his readme pls forgive me <3.
 
