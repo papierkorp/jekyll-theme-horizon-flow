@@ -86,7 +86,8 @@ footer_sidebar:
     columns: 4
   recentposts:
     enabled: true
-    count: 10
+    columns: 1
+    count: 5
 
 footer_links:
   - title: Feed

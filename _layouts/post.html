@@ -16,6 +16,13 @@ layout: default
 			</div>
 		</div>
 		{% endif %}
+		{% if page.display_toc2 %}
+		<div class="toc2">
+			<div id="tocContainer2">
+		 		{% include toc.html html=content %}
+			</div>
+		</div>
+		{% endif %}
 		{% if page.no_header != true %}
 		<div class="post_header">
 			<h1>{{page.title}}</h1>

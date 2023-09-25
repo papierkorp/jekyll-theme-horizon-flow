@@ -146,6 +146,16 @@ footer aside section:first-child {
   @include footer_elements(5);
 }
 
+.footer_recentposts, 
+.footer_recentposts1, 
+.footer_recentposts2, 
+.footer_recentposts3, 
+.footer_recentposts4, 
+.footer_recentposts5 {
+  ul li a {
+    text-transform: none;
+  }
+}
 
 
 @media (width >= $small) and (max-width: $large) {
