@@ -13,19 +13,19 @@
   <aside class="footer_sidebar">
     {% for section in site.footer_sidebar.arrangement %}
       {% if section == 'description' and site.footer_sidebar.description.enabled %}
-        <section class="footer_sitedescription footer_sitedescription{% if site.footer_sidebar.description.columns and site.footer_sidebar.description.columns >= 1 and site.footer_sidebar.description.columns <= 5 %}{{site.footer_sidebar.description.columns}}{% else %}2{% endif %}">
+        <section class="footer_sitedescription footer_sitedescription{% if site.footer_sidebar.description.columns and site.footer_sidebar.description.columns >= 0 and site.footer_sidebar.description.columns <= 5 %}{{site.footer_sidebar.description.columns}}{% else %}0{% endif %}">
           {{ site.description }}
         </section>
       {% elsif section == 'customcontent' and site.footer_sidebar.customcontent.enabled %}
-        <section class="footer_customcontent footer_customcontent{% if site.footer_sidebar.customcontent.columns and site.footer_sidebar.customcontent.columns >= 1 and site.footer_sidebar.customcontent.columns <= 5 %}{{site.footer_sidebar.customcontent.columns}}{% else %}2{% endif %}">
+        <section class="footer_customcontent footer_customcontent{% if site.footer_sidebar.customcontent.columns and site.footer_sidebar.customcontent.columns >= 0 and site.footer_sidebar.customcontent.columns <= 5 %}{{site.footer_sidebar.customcontent.columns}}{% else %}0{% endif %}">
           {{ site.footer_sidebar.customcontent.data }}
         </section>
       {% elsif section == 'customcontent2' and site.footer_sidebar.customcontent2.enabled %}
-        <section class="footer_customcontent2 footer_customcontent2{% if site.footer_sidebar.customcontent2.columns and site.footer_sidebar.customcontent2.columns >= 1 and site.footer_sidebar.customcontent2.columns <= 5 %}{{site.footer_sidebar.customcontent2.columns}}{% else %}2{% endif %}">
+        <section class="footer_customcontent2 footer_customcontent2{% if site.footer_sidebar.customcontent2.columns and site.footer_sidebar.customcontent2.columns >= 0 and site.footer_sidebar.customcontent2.columns <= 5 %}{{site.footer_sidebar.customcontent2.columns}}{% else %}0{% endif %}">
           {{ site.footer_sidebar.customcontent2.data }}
         </section>
       {% elsif section == 'categories' and site.footer_sidebar.categories.enabled %}
-        <section class="footer_categories footer_categories{% if site.footer_sidebar.categories.columns and site.footer_sidebar.categories.columns >= 1 and site.footer_sidebar.categories.columns <= 5 %}{{site.footer_sidebar.categories.columns}}{% else %}5{% endif %}">
+        <section class="footer_categories footer_categories{% if site.footer_sidebar.categories.columns and site.footer_sidebar.categories.columns >= 0 and site.footer_sidebar.categories.columns <= 5 %}{{site.footer_sidebar.categories.columns}}{% else %}0{% endif %}">
           <h3>Categories</h3>
           <ul>
             {% assign all_categories = "" %}
@@ -46,7 +46,7 @@
           </ul>
         </section>
       {% elsif section == 'tags' and site.footer_sidebar.tags.enabled %}
-        <section class="footer_tags footer_tags{% if site.footer_sidebar.tags.columns and site.footer_sidebar.tags.columns >= 1 and site.footer_sidebar.tags.columns <= 5 %}{{site.footer_sidebar.tags.columns}}{% else %}5{% endif %}">
+        <section class="footer_tags footer_tags{% if site.footer_sidebar.tags.columns and site.footer_sidebar.tags.columns >= 0 and site.footer_sidebar.tags.columns <= 5 %}{{site.footer_sidebar.tags.columns}}{% else %}0{% endif %}">
           <h3>Tags</h3>
           <ul>
             {% assign all_tags = "" %}
@@ -67,12 +67,12 @@
           </ul>
         </section>
       {% elsif section == 'recentposts' and site.footer_sidebar.recentposts.enabled %}
-        <section class="footer_recentposts footer_recentposts{% if site.footer_sidebar.recentposts.columns and site.footer_sidebar.recentposts.columns >= 1 and site.footer_sidebar.recentposts.columns <= 5 %}{{site.footer_sidebar.recentposts.columns}}{% else %}2{% endif %}">
+        <section class="footer_recentposts footer_recentposts{% if site.footer_sidebar.recentposts.columns and site.footer_sidebar.recentposts.columns >= 0 and site.footer_sidebar.recentposts.columns <= 5 %}{{site.footer_sidebar.recentposts.columns}}{% else %}0{% endif %}">
           <h3>Recent Posts</h3>
           <ul>
-            {% assign recentposts_count = site.footer_sidebar.recentposts.count | default: 10 %}
-            {% assign recent_posts = site.posts | reverse | limit: recentposts_count %}
-            {% for post in recent_posts %}
+            {% assign recentposts_count = site.footer_sidebar.recentposts.count | default: 5 %}
+            {% assign recent_posts = site.posts | reverse %}
+            {% for post in recent_posts limit:recentposts_count %}
               <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
             {% endfor %}
           </ul>

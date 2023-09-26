@@ -22,7 +22,9 @@ $secondary-color: #1c768f;
 $background-color: #fbf3f2;
 $accent-color: #fa991c;
 
-// $primary-color: #fbf3f2;
-// $secondary-color: #1c768f;
-// $background-color: #032539;
-// $accent-color: #fa991c;
+@media (prefers-color-scheme: dark) {
+    $primary-color: #fbf3f2;
+    $secondary-color: #1c768f;
+    $background-color: #032539;
+    $accent-color: #fa991c;
+}

@@ -101,6 +101,15 @@ footer aside section:first-child {
   padding: 0;
 }
 
+.footer_sitedescription0, 
+.footer_customcontent0, 
+.footer_customcontent20, 
+.footer_recentposts0, 
+.footer_categories0, 
+.footer_tags0 {
+  @include footer_elements_auto();
+}
+
 .footer_sitedescription1, 
 .footer_customcontent1, 
 .footer_customcontent21, 
@@ -147,6 +156,7 @@ footer aside section:first-child {
 }
 
 .footer_recentposts, 
+.footer_recentposts0, 
 .footer_recentposts1, 
 .footer_recentposts2, 
 .footer_recentposts3, 
@@ -154,9 +164,20 @@ footer aside section:first-child {
 .footer_recentposts5 {
   ul li a {
     text-transform: none;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 }
 
+.footer_recentposts0, .footer_recentposts1 {
+  ul li {
+    flex-basis: 100%;
+  }
+  ul li a {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
 
 @media (width >= $small) and (max-width: $large) {
   footer {

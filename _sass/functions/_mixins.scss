@@ -277,3 +277,43 @@
         }
     }
 }
+
+@mixin footer_elements_auto() {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 0;
+        column-gap: 0;
+        width: fit-content;
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: left;
+            cursor: pointer;
+            overflow-wrap: break-word;
+            a {
+                text-decoration: none;
+                color: $background-color;
+                text-transform: lowercase;
+                letter-spacing: -1px;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                padding: 0.5em;
+                text-align: left;
+
+                &:hover {
+                    @include hover();
+                }
+            }
+
+            .archive_linktitle {
+                flex: 1;
+            }
+        }
+    }
+}

@@ -365,7 +365,7 @@ footer_links:
 ### Layouts
 
 In here you can define the amount of columns used to display all tags/categories/years via the `_config`.
-Available values are `1-5`.
+Available values are `0-5`.
 
 ```yaml
 layouts:
@@ -411,32 +411,32 @@ footer_sidebar:
   - recentposts  # will be displayed last
   description:
     enabled: true  # default: true
-    coluns: 2  # default: 2 - if you include a list
+    columns: 2  # default: 0 - if you include a list
   categories:
     enabled: true  # default: false
     count: 100  # default: 100
-    columns: 5  # default: 5
+    columns: 5  # default: 0
   tags:
     enabled: true  # default: false
     count: 100  # default: 100
-    columns: 5  # default: 5
+    columns: 5  # default: 0
   recentposts:
     enabled: true  # default: true
-    count: 10  # default: 10
-    columsn: 2  # default: 2
+    count: 10  # default: 5
+    columns: 2  # default: 0
   custom_content:
     enabled: true
     data: >-
       <h3>EXTRACONTENT</h3>
       <p>not really content though...</p>
-    columns: 2  # default: 2 - if you include a list
+    columns: 2  # default: 0 - if you include a list
   custom_content2:
     enabled: false
     data: "<h3>mhm</h3>"
-    columns: 2  # default: 2 - if you include a list
+    columns: 2  # default: 0 - if you include a list
 ```
 
-
+The default of `0` stands for automatic alignment.
 
 
 ### Table of Contents
@@ -536,6 +536,7 @@ This theme offers the following Front-Matter:
 |--------|------------------|-----------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
 | `post` | subtitle         | Adds a subtitle to the post (optional)                                                                                      | ---<br>subtitle: "You're going to love this." <br>---                                        |
 | `post` | display_toc      | true or false, shows the toc button on the bottom right (default: true)                                                     | ---<br>display_toc: false <br>---                                                            |
+| `post` | display_toc2     | true or false, shows another toc on the right side permanently (default: false)                                             | ---<br>display_toc2: true <br>---                                                            |
 | `post` | last_modified_at | Add extra meta-data when the post was last modified. It takes the date as you write it like a string.                       | ---<br>last_modified_at: 10.09.2023 <br>---                                                  |
 | `post` | search_keywords  | Add extra data to the [search.json](#layout-:-search) file                                                                                | ---<br>search_keywords: "words i didnt use in the tags" <br>---                              |
 | `post` | toTop            | true or false, shows the "To the Top" button on the bottom left (default: true)                                             | ---<br>toTop: false <br>---                                                                  |

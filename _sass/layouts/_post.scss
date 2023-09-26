@@ -7,6 +7,30 @@
 
 /* ---------------------------------------------------- */
 /* ---------------------------------------------------- */
+/* grid */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(12,minmax(0,1fr));
+}
+
+
+.post_header {
+	grid-column: span 12/span 12;
+}
+
+.post_content {
+	grid-column: span 10/span 10;
+}
+
+#toc2 {
+	grid-column: span 2/span 2;
+}
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
 /* content layout */
 /* ---------------------------------------------------- */
 /* ---------------------------------------------------- */
@@ -29,6 +53,9 @@
 		overflow-wrap: break-word;
 	}
 
+	h1:first-child{
+		margin-top: 0;
+	}
 
 	h2 {
 		@include default_header(0);
@@ -154,14 +181,6 @@
 }
 
 
-
-
-
-
-
-
-
-
 /* ---------------------------------------------------- */
 /* ---------------------------------------------------- */
 /* TOC */
@@ -205,7 +224,7 @@ article {
 	min-width: 10vw;
 	max-width: 40vw;
 	background-color: $background-color;
-	z-index: 1;
+	z-index: 2;
 	overflow-x: hidden;
 	min-height: 10vh;
 	max-height: 80vh;
@@ -277,38 +296,38 @@ article {
 }
 
 
+#toc2 {
+	font-size: 0.6em;
+	position: sticky;
+	top: 2vw;
+	z-index: 1;
+	transform: translate(2.5em);
+	color: $secondary-color;
+	align-self: start;
+
+	ul {
+		padding: 0;
+	}
+
+	ul ul {
+		padding-left: 0.5em;
+	}
 
 
-#tocContainer2 {
-	font-size: 0.8em;
-	letter-spacing: -0.05em;
-	vertical-align: center;
-
-	// li {
-	// 	margin-bottom: 1em;
-	// }
 
 	li::marker {
 		content: ' >   ';
-		font-size: 1em;
+		font-size: 0.8em;
 		font-weight: bold;
 		font-family: "Georgia";
+		vertical-align: middle;
+	  position: relative;
+	  top: -3px;
 	}
-
-// 	Arial
-// Helvetica (and its variations)
-// Times New Roman
-// Times (a serif font similar to Times New Roman)
-// Georgia (a serif font)
-// Courier New (a monospaced font)
-// Courier (a monospaced font)
-// Verdana (a sans-serif font)
-// Tahoma (a sans-serif font)
-// Trebuchet MS (a sans-serif font)
 
 	li a {
 		text-decoration: none;
-		color: $secondary-color;
+		color: $primary-color;
 		line-height: 1.5em;
 	}
 
@@ -317,6 +336,17 @@ article {
 	}
 }
 
+@media screen and (max-width: $xlarge) {
+	#toc2 {
+		font-size: 0.5em;
+	}
+}
+
+@media screen and (max-width: $large) {
+	#toc2 {
+		display: none;
+	}
+}
 
 
 /* ---------------------------------------------------- */

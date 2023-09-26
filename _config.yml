@@ -78,16 +78,10 @@ footer_sidebar:
     enabled: true
   categories:
     enabled: true
-    count: 100
-    columns: 2
   tags:
     enabled: true
-    count: 100
-    columns: 4
   recentposts:
     enabled: true
-    columns: 1
-    count: 5
 
 footer_links:
   - title: Feed
@@ -116,7 +110,6 @@ defaults:
     scope:
       path: "_posts"
     values:
-      toc: yes
       display_toc: true
 
 paginate: 3
