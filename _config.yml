@@ -69,6 +69,7 @@ navigation:
     url: /search.html
 
 footer_sidebar:
+  auto: true
   arrangement:
   - description
   - tags

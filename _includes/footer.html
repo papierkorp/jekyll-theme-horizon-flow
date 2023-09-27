@@ -10,7 +10,7 @@
 
 
 {% if site.footer_sidebar.arrangement %}
-  <aside class="footer_sidebar">
+  <aside class="footer_sidebar footer_aside{% if site.footer_sidebar.auto %}_auto{% endif %}">
     {% for section in site.footer_sidebar.arrangement %}
       {% if section == 'description' and site.footer_sidebar.description.enabled %}
         <section class="footer_sitedescription footer_sitedescription{% if site.footer_sidebar.description.columns and site.footer_sidebar.description.columns >= 0 and site.footer_sidebar.description.columns <= 5 %}{{site.footer_sidebar.description.columns}}{% else %}0{% endif %}">

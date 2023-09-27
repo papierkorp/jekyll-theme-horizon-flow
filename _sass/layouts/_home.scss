@@ -73,6 +73,12 @@
 		color: $primary-color;
 	}
 
+	span {
+		&:hover {
+			@include hover();
+		}
+	}
+
 
 	.page_count {
 		margin: 0 auto;

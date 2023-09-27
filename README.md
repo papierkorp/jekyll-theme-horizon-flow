@@ -381,7 +381,7 @@ layouts:
 ### Footer Sidebar
 
 The footer Sidebar is the content directly above the footer.
-Per default there are 4 elements available:
+Per default there are 6 elements available:
 
 **description:** Uses the `description:` of `_config` to display all the data from there. For the best experience you should use an <h1></h1> on the top.  
 **categories:** Shows random categories according to the count.  
@@ -404,6 +404,7 @@ description: >- # this means to ignore newlines until
   </p>
 
 footer_sidebar:
+  auto: false # false = all elements will have the same width, true = each element takes what it needs
   arrangement:  # you can rearrange the positions of the elements
   - description  # will be the first one to be displayed
   - tags  # second in the row ...
