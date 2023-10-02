@@ -297,13 +297,14 @@ article {
 
 
 #toc2 {
-	font-size: 0.6em;
+	font-size: 0.75em;
 	position: sticky;
 	top: 2vw;
 	z-index: 1;
 	transform: translate(2.5em);
 	color: $secondary-color;
 	align-self: start;
+	letter-spacing: -1px;
 
 	ul {
 		padding: 0;
@@ -333,6 +334,7 @@ article {
 
 	li a:hover {
 		@include hover();
+		//font-size: 1.2em;
 	}
 }
 
