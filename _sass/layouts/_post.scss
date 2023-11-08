@@ -405,16 +405,10 @@ article {
 		}
 
 		.supplements a {
-			/* Set links to display as block-level elements so capitalize works*/
-			display: inline-block;
 			word-break: break-all;
 			&:hover {
 				@include hover();
 			}
-		  }
-
-		.supplements a::first-letter {
-			text-transform: capitalize;
 		  }
 
 		.supplements-sep::before {
