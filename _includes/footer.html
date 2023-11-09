@@ -90,9 +90,9 @@
   <div class="social-icons item3">
     {% for link in site.footer_links %}
       {% if link.icon %}
-        <a href="{{ site.baseurl }}{{ link.url }}" class="{{ link.icon }}" target="_blank"></a>
+        <a href="{{ link.url }}" class="{{ link.icon }}" target="_blank"></a>
       {% else %}
-        <a href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
+        <a href="{{ link.url }}">{{ link.title }}</a>
       {% endif %}
       {% unless forloop.last %}
         <span class="divider"></span>
