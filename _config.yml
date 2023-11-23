@@ -69,6 +69,7 @@ navigation:
     url: /search.html
 
 footer_sidebar:
+  enabled: true
   auto: true
   arrangement:
   - description

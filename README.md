@@ -404,6 +404,7 @@ description: >- # this means to ignore newlines until
   </p>
 
 footer_sidebar:
+  enabled: true
   auto: false # false = all elements will have the same width, true = each element takes what it needs
   arrangement:  # you can rearrange the positions of the elements
   - description  # will be the first one to be displayed
