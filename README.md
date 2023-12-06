@@ -13,6 +13,7 @@
   - [Read Time](#read-time)
   - [default plugins](#default-plugins)
   - [Configurable Labels](#configurable-labels)
+  - [Comments](#comments)
 - [Front Matter](#front-matter)
 - [Layouts](#layouts-1)
   - [`layout: default`](#layout-default)
@@ -23,7 +24,6 @@
   - [`layout: search`](#layout-search)
   - [`layout: tags`](#layout-tags)
 - [whislist](#whislist)
-
 
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat-square)](https://raw.githubusercontent.com/papierkorp/jekyll-theme-horizon-flow/main/LICENSE.txt)
@@ -214,6 +214,7 @@ As for the possible Configurations this theme offers take note of the following:
 * [Read Time](#read-time)
 * [default plugins](#default-plugins)
 * [Configurable Labels](#configurable-labels)
+* [Comments](#comments)
 
 ### Site URL
 
