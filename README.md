@@ -525,6 +525,21 @@ categories_nothing_found: "No categories available."
 ```
 
 
+### Comments
+
+This theme enables the use of Comments per Github Issues API (taken from [here](https://www.aleksandrhovhannisyan.com/blog/jekyll-comment-system-github-issues/#how-to-add-comments-to-a-jekyll-blog)).
+To enable comments you will need the following Config:
+
+```yaml
+issues_repo: YourUsername/RepoName  # e.g.: issues_repo: papierkorp/blog
+```
+
+In addition you will have to open up a Issue for each blog post manually and copy the ID of this Issue.
+Afterwards add this Front Matter to your Post:
+
+```yaml
+comments_id: 1
+```
 
 ---
 
@@ -546,6 +561,7 @@ This theme offers the following Front-Matter:
 | `post` | noheader         | Disable the whole header and only show the Content. (default: false)                                                        | ---<br>noheader: true <br>---                                                                |
 | `post` | searchable       | The post wont be included in the search.                                                                                    | ---<br>searchable: false <br>---                                                             |
 | `post` | show_supplements | The supplements (date, readtime, tags...) wont be shown.                                                                    | ---<br>show_supplements: false<br><br>---                                                 |
+| `post` | comments_id      | If you want to enable comments (hosted on Github - needs the neccessary config set)                                         | ---<br>comments_id: 1<br><br>---                                                 |
 | `home` | noheader         | Disable the whole header and only show the Content. (default: false)                                                        | ---<br>noheader: true <br>---                                                                |
 
 --- 

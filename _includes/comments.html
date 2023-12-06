@@ -1,0 +1,127 @@
+{% assign issues_repo = site.issues_repo %}
+{% assign issue_id = include.issue_id %}
+
+<section id="comments">
+  <div class="comment-actions">
+    <h2><span id="comments-count"></span> Comments</h2>
+    <a
+      class="comment_button"
+      href="https://github.com/{{ issues_repo }}/issues/{{ issue_id }}"
+      target="_blank"
+      >
+      Comment on Github
+      <i class="fa fa-external-link" aria-hidden="true">
+        
+      </i>
+    </a>
+  </div>
+  <div id="comments-wrapper">
+    Loading...
+  </div>
+</section>
+
+
+
+<script>
+const commentsSection = document.getElementById('comments');
+const commentsWrapper = commentsSection.querySelector('#comments-wrapper');
+const commentsCount = commentsSection.querySelector('#comments-count');
+
+const commentsObserver = new IntersectionObserver((entries, self) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      fetchComments(); // this is the important part
+      self.unobserve(entry.target);
+    }
+  });
+}, { rootMargin: '200px 0px 0px 0px' });
+
+commentsObserver.observe(commentsSection);
+
+const fetchComments = async () => {
+  try {
+    const comments = await (await fetch(
+      'https://api.github.com/repos/{{ issues_repo }}/issues/{{ issue_id }}/comments'
+    )).json();
+    initRenderComments(comments);
+  } catch (e) {
+    commentsWrapper.innerHTML = `<p>Unable to retrieve the comments for this post.</p>`;
+  }
+}
+
+const loadScript = (src) => {
+  const scriptElement = document.createElement('script');
+  document.body.appendChild(scriptElement);
+
+  return new Promise((resolve) => {
+    scriptElement.onload = resolve;
+
+    // Important to register onload before setting src
+    scriptElement.src = src;
+  });
+}
+
+const commentScripts = [
+  'https://unpkg.com/marked@0.3.6/marked.min.js',
+  'https://unpkg.com/dompurify@1.0.8/dist/purify.min.js',
+  'https://unpkg.com/dayjs@1.8.21/dayjs.min.js',
+  'https://unpkg.com/dayjs@1.7.8/plugin/relativeTime.js',
+];
+
+// Reminder: this gets called when the viewport intersects with the comments section
+const initRenderComments = async (comments) => {
+  if (!comments.length) {
+    commentsWrapper.innerHTML = `<p>No comments yet 👀 Be the first to post!</p>`;
+    return;
+  }
+
+  // Load all comment script dependencies async
+  await Promise.all(commentScripts.map((script) => loadScript(script)));
+  renderComments(comments);
+}
+
+const renderComments = (comments) => {
+  // load the relativeTime plugin for dayjs so we can express dates relative to now
+  dayjs.extend(dayjs_plugin_relativeTime);
+
+  commentsCount.innerText = `${comments.length}`;
+
+  const commentsList = document.createElement('ol');
+  commentsList.className = 'comments-list';
+  commentsList.setAttribute('aria-label', 'Comments on this blog post');
+
+  commentsList.innerHTML = comments
+  .sort((comment1, comment2) => {
+    return comment1.created_at < comment2.created_at ? 1 : -1;
+  })
+  .map(comment => {
+    const datePosted = dayjs(comment.created_at).fromNow();
+    const user = comment.user;
+    const body = DOMPurify.sanitize(marked(comment.body));
+    const postedByAuthor = comment.author_association === 'OWNER';
+    const edited = comment.created_at !== comment.updated_at;
+
+    return `<li class="comment">
+                <div class="commenter">
+                    <img src="${user.avatar_url}" alt="" aria-hidden="true" class="avatar" />
+                    <a
+                        href="https://github.com/${user.login}"
+                        class="username"
+                        target="_blank"
+                        >${user.login}</a
+                    >
+                    <div class="date-posted">commented <time datetime="${comment.created_at}">${datePosted}</time></div>
+                    ${postedByAuthor ? '<span class="tag author-badge">Author</span>' : ''}
+                    ${edited ? `<span class="comment-edited">Edited</span>` : ''}
+                </div>
+                <div class="comment-body">${body}</div>
+            </li>`;
+  })
+  .join('');
+
+  commentsWrapper.innerHTML = '';
+  commentsWrapper.appendChild(commentsList);
+}
+
+
+</script>

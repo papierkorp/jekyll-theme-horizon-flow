@@ -1,8 +1,9 @@
-@import "external/_normalize.scss";
-@import "external/_highlighter_rougify_base16dark.scss";
-
 @import "functions/_mixins.scss";
 @import "functions/_values.scss";
+
+@import "external/_normalize.scss";
+@import "external/_highlighter_rougify_base16dark.scss";
+@import "external/_comments.scss";
 
 @import "layouts/_archive.scss";
 @import "layouts/_categories.scss";

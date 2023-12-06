@@ -54,6 +54,10 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
+#------------------------------------AddOns------------------------------------
+
+issues_repo: papierkorp/blog
+
 #------------------------------------Horizon Flow specific------------------------------------
 
 navigation:
