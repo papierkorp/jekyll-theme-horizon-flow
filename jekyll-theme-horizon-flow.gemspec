@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-theme-horizon-flow"
-  spec.version       = "1.0.3"
+  spec.version       = "1.1.0"
   spec.authors       = ["Markus Schiller"]
 
   spec.summary       = "\"Horizon-Flow\" is a mobile friendly Jekyll theme characterized by a serene color palette of blue, gray, and orange. It features a clean, sidebar-free layout, keeping all content in a single, flowing main container. The header remains fixed even while scrolling, ensuring easy navigation. Allows Custom content to be displaye in the footer and footer-sidebar."
